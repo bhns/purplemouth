@@ -1,0 +1,2 @@
+SELECT * FROM main_words WHERE 1 ORDER BY word_name 
+
