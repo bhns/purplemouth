@@ -93,10 +93,6 @@ try {
 			 <?php echo $last_consult_sql; ?><br> 
 			 <?php echo $sql ; ?><br> 
 			 
-	 <?php		 $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
-$txt =  $sql."\n"."\n";
-fwrite($myfile, $txt);
-fclose($myfile); ?><br> 
 
 
  	    </div>
@@ -130,7 +126,7 @@ fclose($myfile); ?><br>
 				 <tr>
 				 <td><a href="_words.php?cid=<?php echo $res["word_id"]; ?>" class="button small">View</a></td>
 				  <td><a href="_edit_word.php?m=update&cid=<?php echo $res["word_id"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" class="button small">Edit</a></td>
-				  <td><a href="_del_word.php?mode=delete&cid=<?php echo $res["word_id"]; ?>&keyword=<?php echo $_GET["keyword"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" onclick="return confirm('Are you sure?')" class="button small">Delete</a> </td>
+				  <td><a href="_main_.php?mode=delete&cid=<?php echo $res["word_id"]; ?>&keyword=<?php echo $_GET["keyword"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" onclick="return confirm('Are you sure?')" class="button small">Delete</a> </td>
 				  </tr>
 
 				 <?php } ?>

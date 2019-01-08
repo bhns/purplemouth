@@ -75,17 +75,17 @@ try {
         
             
             <div class="field half">
-              <label for="contact_no1"><span class="required">*</span>Empty 1:</label>
+              <label for="color_"><span class="required">*</span>Empty 1:</label>
               <div class="span-3-10">
-                <input type="text" readonly=""  value="<?php echo $results[0]["contact_no1"] ?>" placeholder="Empty" id="contact_no1" class="color2" name="contact_no1"><span id="contact_no1_err" class="error"></span>
+                <input type="text" readonly=""  value="<?php echo $results[0]["color_"] ?>" placeholder="Empty" id="color_" class="color2" name="color_"><span id="color__err" class="error"></span>
                <!-- <span class="help-block">Maximum of 10 digits only and only numbers.</span>-->
               </div>
             </div>
             
             <div class="field half">
-              <label for="contact_no2">Empty 2:</label>
+              <label for="frequen_">Empty 2:</label>
               <div class="span-3-10">
-                <input type="text" readonly="" value="<?php echo $results[0]["contact_no2"] ?>" placeholder="Empty" id="contact_no2" class="color2" name="contact_no2"><span id="contact_no2_err" class="error"></span>
+                <input type="text" readonly="" value="<?php echo $results[0]["frequen_"] ?>" placeholder="Empty" id="frequen_" class="color2" name="frequen_"><span id="frequen__err" class="error"></span>
                 <!--<span class="help-block">Maximum of 10 digits only and only numbers.</span>-->
               </div>
             </div>

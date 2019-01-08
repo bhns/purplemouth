@@ -23,7 +23,7 @@ try {
       <div class="intro color2">
         <h3 class="panel-title"><?php echo ($_GET["m"] == "update") ? "Edit" : "Add"; ?> New Word</h3>
 		
-		  <form class="form-horizontal" name="contact_form" id="contact_form" enctype="multipart/form-data" method="post" action="_del_word.php">
+		  <form class="form-horizontal" name="contact_form" id="contact_form" enctype="multipart/form-data" method="post" action="_main_.php">
           <input type="hidden" name="mode" value="<?php echo ($_GET["m"] == "update") ? "update_old" : "add_new"; ?>" >
           <input type="hidden" name="old_pic" value="<?php echo $results[0]["word_pic"] ?>" >
           <input type="hidden" name="cid" value="<?php echo intval($results[0]["word_id"]); ?>" >
@@ -61,17 +61,17 @@ try {
         
             
             <div class="field half">
-              <label for="contact_no1"><span class="required">*</span>Empty 1:</label>
+              <label for="color_"><span class="required">*</span>Empty 1:</label>
               <div class="span-3-10">
-                <input type="text" value="<?php echo $results[0]["contact_no1"] ?>" placeholder="Empty" id="contact_no1" class="color2" name="contact_no1"><span id="contact_no1_err" class="error"></span>
+                <input type="text" value="<?php echo $results[0]["color_"] ?>" placeholder="Empty" id="color_" class="color2" name="color_"><span id="color__err" class="error"></span>
                <!-- <span class="help-block">Maximum of 10 digits only and only numbers.</span>-->
               </div>
             </div>
             
             <div class="field half">
-              <label for="contact_no2">Empty 2:</label>
+              <label for="frequen_">Empty 2:</label>
               <div class="span-3-10">
-                <input type="text" value="<?php echo $results[0]["contact_no2"] ?>" placeholder="Empty" id="contact_no2" class="color2" name="contact_no2"><span id="contact_no2_err" class="error"></span>
+                <input type="text" value="<?php echo $results[0]["frequen_"] ?>" placeholder="Empty" id="frequen_" class="color2" name="frequen_"><span id="frequen__err" class="error"></span>
                 <!--<span class="help-block">Maximum of 10 digits only and only numbers.</span>-->
               </div>
             </div>
@@ -148,10 +148,6 @@ try {
 											<li class="icon fa-medium"><a href="#">medium.com/untitled</a></li>
 										</ul>
 									</div>
-		 <?php		 $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
-$txt =  $sql."\n"."\n";
-fwrite($myfile, $txt);
-fclose($myfile); ?><br> 
 	
   </div>
  </section> 
@@ -182,8 +178,8 @@ function validateForm() {
 	 var word_name = $.trim( $("#word_name").val());
      var type_name = $.trim( $("#type_name").val());
 	 var email_id = $.trim( $("#email_id").val());
-	 var contact_no1 = $.trim( $("#contact_no1").val());
-	 var contact_no2 = $.trim( $("#contact_no2").val());
+	 var color_ = $.trim( $("#color_").val());
+	 var frequen_ = $.trim( $("#frequen_").val());
      
 	 var word_pic =  $.trim( $("#word_pic").val());
 
@@ -215,28 +211,28 @@ function validateForm() {
 		errCnt++;
 	}
     
-    if (contact_no1 == "" ) {
-		$("#contact_no1_err").html("Enter first contact number.");
-		$('#contact_no1_err').fadeIn("fast"); 
+    if (color_ == "" ) {
+		$("#color__err").html("Enter first contact number.");
+		$('#color__err').fadeIn("fast"); 
 		errCnt++;
-	}  else if (contact_no1.length <= 9 || contact_no1.length > 10 ) {
-		$("#contact_no1_err").html("Enter 10 digits only.");
-		$('#contact_no1_err').fadeIn("fast"); 
+	}  else if (color_.length <= 9 || color_.length > 10 ) {
+		$("#color__err").html("Enter 10 digits only.");
+		$('#color__err').fadeIn("fast"); 
 		errCnt++;
-	} else if ( !$.isNumeric(contact_no1) ) {
-		$("#contact_no1_err").html("Must be digits only.");
-		$('#contact_no1_err').fadeIn("fast"); 
+	} else if ( !$.isNumeric(color_) ) {
+		$("#color__err").html("Must be digits only.");
+		$('#color__err').fadeIn("fast"); 
 		errCnt++;
 	}
     
-    if (contact_no2.length > 0) {
-      if (contact_no2.length <= 9 || contact_no2.length > 10 ) {
-		$("#contact_no2_err").html("Enter 10 digits only.");
-		$('#contact_no2_err').fadeIn("fast"); 
+    if (frequen_.length > 0) {
+      if (frequen_.length <= 9 || frequen_.length > 10 ) {
+		$("#frequen__err").html("Enter 10 digits only.");
+		$('#frequen__err').fadeIn("fast"); 
 		errCnt++;
-	} else if ( !$.isNumeric(contact_no2) ) {
-		$("#contact_no2_err").html("Must be digits only.");
-		$('#contact_no2_err').fadeIn("fast"); 
+	} else if ( !$.isNumeric(frequen_) ) {
+		$("#frequen__err").html("Must be digits only.");
+		$('#frequen__err').fadeIn("fast"); 
 		errCnt++;
 	}
     }
