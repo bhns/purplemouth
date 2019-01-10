@@ -1,6 +1,7 @@
 <?php
-/* 
- * @author BHNS
+    /* 
+ * You are free for make it better @author everyone that love shared
+ 
  */
 require_once './_config.php';
 include './_header.php';

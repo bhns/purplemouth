@@ -1,7 +1,9 @@
 <?php
 /* 
- * @author BHNS
+     /* 
+ * You are free for make it better @author everyone that love shared
  
+
 				  <?php echo $res["word_name"]; ?>
 				  <?php echo $res["category_word"]; ?>
 				  <?php echo $res["type_name"]; ?>

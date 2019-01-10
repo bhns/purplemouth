@@ -1,5 +1,8 @@
 <?php
-
+    /* 
+ * You are free for make it better @author everyone that love shared
+ 
+ */
 require './_config.php';
 $mode = $_REQUEST["mode"];
 if ($mode == "add_new" ) {

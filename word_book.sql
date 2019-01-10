@@ -1,6 +1,27 @@
 create database word_book;
 use word_book;
 
+-- MySQL dump 10.13  Distrib 5.5.38, for debian-linux-gnu (i686)
+--
+-- Host: localhost    Database: main_words
+-- ------------------------------------------------------
+-- Server version	5.5.38-0ubuntu0.12.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `main_words`
+--
+
 CREATE TABLE IF NOT EXISTS `main_words` (
   `word_id` int(11) NOT NULL AUTO_INCREMENT,
   `word_name` varchar(255) NOT NULL,
@@ -1341,7 +1362,7 @@ INSERT INTO `main_words` (`word_id`, `word_name`, `category_word`, `type_name`, 
 (1393, 'diploma', '', '', 'dəploʊmə', 'diploma', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1394, 'diplomatic', '', '', 'dɪpləmætɪk', 'diplomático, hábil', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1395, 'direct', '', '', 'dərɛkt', 'direto', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
-(1396, 'direction', 'Noun', '5 meses', 'dərɛkshən', 'direção', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
+(1396, 'pronunciation', 'Noun', '5 meses', 'dərɛkshən', 'direção', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1397, 'director', 'Noun', '5 meses', 'dərɛktər', 'diretor', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1398, 'dirt', '', '', 'dərt', 'sujeira', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1399, 'dirty', 'Adjective', '5 meses', 'dərti', 'sujo', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
@@ -1391,7 +1412,7 @@ INSERT INTO `main_words` (`word_id`, `word_name`, `category_word`, `type_name`, 
 (1443, 'dispose', '', '', 'dɪspoʊz', 'dispor, dispor', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1444, 'disrupt', '', '', 'dɪsrəpt', 'interromper, despedaçar, romper', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1445, 'dissolve', '', '', 'dɪzɑ:lv', 'dissolver', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
-(1446, 'distance', 'Noun', '4 meses', 'dɪstəns', 'distância', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
+(1446, 'notes', 'Noun', '4 meses', 'dɪstəns', 'distância', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1447, 'distant', '', '', 'dɪstənt', 'distante', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1448, 'distinct', '', '', 'dɪstɪñkt', 'distinto', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1449, 'distinguish', '', '', 'dɪstɪñguɪsh', 'reconhecer, distinguir distribute dɪstrɪbiu:t distribuir, repartir', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
@@ -4149,7 +4170,7 @@ INSERT INTO `main_words` (`word_id`, `word_name`, `category_word`, `type_name`, 
 (4192, 'speck', '', '', 'spɛk', 'mancha, pequena pinta', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
 (4193, 'spectacular', '', '', 'spɛktækiələr', 'espetacular', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
 (4194, 'speech', '', '', 'spi:tch', 'discurso, fala', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
-(4195, 'speed', 'Noun', '2 meses', 'spi:d', 'velocidade', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
+(4195, 'type_name', 'Noun', '2 meses', 'spi:d', 'velocidade', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
 (4196, 'spell', '', '', 'spɛl', 'soletrar', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
 (4197, 'spend', 'Verb', '2 meses', 'spɛnd', 'gastar', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
 (4198, 'spent', '', '', 'spɛnt', 'passado e particípio passado de spend', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
@@ -5316,7 +5337,7 @@ INSERT INTO `main_words` (`word_id`, `word_name`, `category_word`, `type_name`, 
 (5355, 'memories', 'Noun', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
 (5356, 'studying', 'Verb', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
 (5357, 'thousands', 'Noun', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
-(5358, 'directions', 'Noun', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
+(5358, 'pronunciations', 'Noun', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
 (5359, 'leaving', 'Verb', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
 (5360, 'doubts', 'Noun', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
 (5361, 'surprises', 'Noun', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
@@ -6718,3 +6739,144 @@ INSERT INTO `main_words` (`word_id`, `word_name`, `category_word`, `type_name`, 
 --
 -- Indexes for dumped tables
 --
+
+
+
+/*!50003 DROP PROCEDURE IF EXISTS `prcDeleteRecord` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `prcDeleteRecord`(
+_word_id VARCHAR(50))
+BEGIN
+  DELETE FROM main_words
+  WHERE word_id = _word_id;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `prcGetAllRecords` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `prcGetAllRecords`()
+BEGIN
+SELECT word_id, created, CONCAT('{ "word_name":"', CAST(word_name AS CHAR),'", "category_word":"', CAST(category_word AS CHAR), '", "type_name":"', CAST(type_name AS CHAR), '", "pronunciation":"', CAST(pronunciation AS CHAR), '", "notes":"', CAST(notes AS CHAR), '", "color_":"', color_, '", "created":"', DATE_FORMAT(created, '%b %e %Y %h:%i%p'), '", "email_address":"', email_address, '", "f_emotion":"', f_emotion, '", "word_id":"', CAST(word_id AS CHAR), '", "sf_emotion":"', CAST(sf_emotion AS CHAR), '", "ssf_emotion":"', ssf_emotion, '" }') json
+FROM (SELECT MAX(word_id) ID
+      FROM main_words
+      WHERE word_id != '0' && CHAR_LENGTH(word_id) != 0 && created != '0000-00-00 00:00:00'
+      GROUP BY word_id) AS MaxID
+JOIN main_words ON main_words.word_id = MaxID.ID
+ORDER BY created;
+END ;;
+
+
+
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `prcGetRecord` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `prcGetRecord`(
+_word_id VARCHAR(50))
+BEGIN
+  SELECT CONCAT('{ "word_name":"', CAST(word_name AS CHAR),'", "category_word":"', CAST(category_word AS CHAR), '", "type_name":"', CAST(type_name AS CHAR), '", "pronunciation":"', CAST(pronunciation AS CHAR), '", "notes":"', CAST(notes AS CHAR), '", "color_":"', color_, '", "created":"', DATE_FORMAT(created, '%b %e %Y %h:%i%p'), '", "email_address":"', email_address, '", "f_emotion":"', f_emotion, '", "word_id":"', CAST(word_id AS CHAR), '", "sf_emotion":"', CAST(sf_emotion AS CHAR), '", "ssf_emotion":"', ssf_emotion, '" }') json
+  FROM main_words
+  WHERE word_id = _word_id
+  ORDER BY created;
+END ;;
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `prcGetRecords`()
+BEGIN
+  CREATE TEMPORARY TABLE tempRecords (
+    word_id VARCHAR(50),
+    email_address VARCHAR(50),
+    startTime DATETIME,
+    endTime DATETIME)
+  ENGINE = MEMORY;
+
+  INSERT INTO tempRecords (word_id, email_address)
+  SELECT DISTINCT word_id, email_address
+  FROM main_words;
+
+  UPDATE tempRecords tr
+  SET startTime = (SELECT MIN(created) FROM main_words wl
+  WHERE wl.word_id = tr.word_id
+  AND wl.email_address = tr.email_address);
+
+  UPDATE tempRecords tr
+  SET endTime = (SELECT MAX(created) FROM main_words wl
+  WHERE wl.word_id = tr.word_id
+  AND wl.email_address = tr.email_address);
+
+  SELECT
+
+  CONCAT('{ "word_id": "', CAST(word_id AS CHAR),  '", "email_address": "', email_address, '", "times": "(', DATE_FORMAT(startTime, '%b %e %Y %h:%i%p'), ' - ', DATE_FORMAT(endTime, '%b %e %Y %h:%i%p'), ')" }') json
+  FROM tempRecords
+  ORDER BY startTime DESC;
+
+  DROP TABLE tempRecords;
+END ;;
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `prcSaveRecord`(
+_word_name DECIMAL(10,7),
+_category_word DECIMAL(10,7),
+_type_name INT(10),
+_pronunciation INT(10),
+_notes DECIMAL(10,1),
+_date TIMESTAMP,
+_color_ VARCHAR(50),
+_email_address VARCHAR(50),
+_f_emotion VARCHAR(50),
+_word_id VARCHAR(50),
+_sf_emotion INT(10),
+_ssf_emotion VARCHAR(255),
+user_code1 VARCHAR(50)
+)
+
+
+BEGIN
+   INSERT INTO main_words (word_name, category_word, type_name, pronunciation, notes, created, color_, email_address, f_emotion,  word_id, sf_emotion, ssf_emotion, eventType)
+   VALUES (_word_name, _category_word, _type_name, _pronunciation, _notes, _date, _color_, _email_address, _f_emotion, _word_id, _sf_emotion, _ssf_emotion, user_code1);
+   SELECT NOW();
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2014-09-14 18:38:51
