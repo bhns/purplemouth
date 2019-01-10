@@ -1362,7 +1362,7 @@ INSERT INTO `main_words` (`word_id`, `word_name`, `category_word`, `type_name`, 
 (1393, 'diploma', '', '', 'dəploʊmə', 'diploma', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1394, 'diplomatic', '', '', 'dɪpləmætɪk', 'diplomático, hábil', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1395, 'direct', '', '', 'dərɛkt', 'direto', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
-(1396, 'pronunciation', 'Noun', '5 meses', 'dərɛkshən', 'direção', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
+(1396, 'direction', 'Noun', '5 meses', 'dərɛkshən', 'direção', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1397, 'director', 'Noun', '5 meses', 'dərɛktər', 'diretor', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1398, 'dirt', '', '', 'dərt', 'sujeira', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1399, 'dirty', 'Adjective', '5 meses', 'dərti', 'sujo', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
@@ -1412,7 +1412,7 @@ INSERT INTO `main_words` (`word_id`, `word_name`, `category_word`, `type_name`, 
 (1443, 'dispose', '', '', 'dɪspoʊz', 'dispor, dispor', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1444, 'disrupt', '', '', 'dɪsrəpt', 'interromper, despedaçar, romper', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1445, 'dissolve', '', '', 'dɪzɑ:lv', 'dissolver', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
-(1446, 'notes', 'Noun', '4 meses', 'dɪstəns', 'distância', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
+(1446, 'distance', 'Noun', '4 meses', 'dɪstəns', 'distância', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1447, 'distant', '', '', 'dɪstənt', 'distante', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1448, 'distinct', '', '', 'dɪstɪñkt', 'distinto', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
 (1449, 'distinguish', '', '', 'dɪstɪñguɪsh', 'reconhecer, distinguir distribute dɪstrɪbiu:t distribuir, repartir', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:18:31', NULL, NULL, NULL),
@@ -4170,7 +4170,7 @@ INSERT INTO `main_words` (`word_id`, `word_name`, `category_word`, `type_name`, 
 (4192, 'speck', '', '', 'spɛk', 'mancha, pequena pinta', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
 (4193, 'spectacular', '', '', 'spɛktækiələr', 'espetacular', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
 (4194, 'speech', '', '', 'spi:tch', 'discurso, fala', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
-(4195, 'type_name', 'Noun', '2 meses', 'spi:d', 'velocidade', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
+(4195, 'speed', 'Noun', '2 meses', 'spi:d', 'velocidade', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
 (4196, 'spell', '', '', 'spɛl', 'soletrar', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
 (4197, 'spend', 'Verb', '2 meses', 'spɛnd', 'gastar', '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
 (4198, 'spent', '', '', 'spɛnt', 'passado e particípio passado de spend', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:10', NULL, NULL, NULL),
@@ -5337,7 +5337,7 @@ INSERT INTO `main_words` (`word_id`, `word_name`, `category_word`, `type_name`, 
 (5355, 'memories', 'Noun', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
 (5356, 'studying', 'Verb', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
 (5357, 'thousands', 'Noun', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
-(5358, 'pronunciations', 'Noun', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
+(5358, 'directions', 'Noun', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
 (5359, 'leaving', 'Verb', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
 (5360, 'doubts', 'Noun', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
 (5361, 'surprises', 'Noun', '5 meses', '', NULL, '', NULL, 'clebe@live.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2019-01-08 15:19:23', NULL, NULL, NULL),
@@ -6846,25 +6846,25 @@ END ;;
 
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `prcSaveRecord`(
-_word_name DECIMAL(10,7),
-_category_word DECIMAL(10,7),
-_type_name INT(10),
-_pronunciation INT(10),
-_notes DECIMAL(10,1),
-_date TIMESTAMP,
-_color_ VARCHAR(50),
-_email_address VARCHAR(50),
-_f_emotion VARCHAR(50),
-_word_id VARCHAR(50),
-_sf_emotion INT(10),
-_ssf_emotion VARCHAR(255),
-user_code1 VARCHAR(50)
+_word_name varchar(255),
+_lan_name varchar(255),
+_category_word varchar(255),
+_type_name varchar(255),
+_pronunciation varchar(255),
+_updated varchar(255),
+_color_ varchar(255),
+_frequen_ varchar(255),
+_f_emotion varchar(255),
+_sf_emotion varchar(255),
+_ssf_emotion varchar(255),
+_user_code1 varchar(255),
+_user_code2 varchar(255)
 )
 
 
 BEGIN
-   INSERT INTO main_words (word_name, category_word, type_name, pronunciation, notes, created, color_, email_address, f_emotion,  word_id, sf_emotion, ssf_emotion, eventType)
-   VALUES (_word_name, _category_word, _type_name, _pronunciation, _notes, _date, _color_, _email_address, _f_emotion, _word_id, _sf_emotion, _ssf_emotion, user_code1);
+   INSERT INTO main_words (word_name, lan_name, category_word, type_name, pronunciation, updated, color_, frequen_, f_emotion, sf_emotion, ssf_emotion, user_code1, user_code2)
+   VALUES               (_word_name, _lan_name, _category_word, _type_name, _pronunciation, _updated, _color_, _frequen_, _f_emotion, _sf_emotion, _ssf_emotion, _user_code1, _user_code2);
    SELECT NOW();
 END ;;
 DELIMITER ;

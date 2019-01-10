@@ -6,12 +6,12 @@
  */
     require_once './_config.php';
 
-    $stmt = $DB->prepare('CALL prcGetRecords();');
-    $stmt->execute();
+    $check_ = $DB->prepare('CALL prcGetRecords();');
+    $check_->execute();
 
     $json = '{ "Records": [';
 
-    foreach ($stmt as $row) {
+    foreach ($check_ as $row) {
         $json .= $row['json'];
         $json .= ',';
     }
