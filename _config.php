@@ -8,6 +8,27 @@ error_reporting( E_ALL & ~E_DEPRECATED & ~E_NOTICE );
 ob_start();
 session_start();
 
+/*****************Cookie Languagem outros******************************************************/
+//https://stackoverflow.com/questions/7791126/how-to-create-a-simple-php-cookie-language-toggle
+//*********************************************************************************************
+    $lang = "en";
+
+    if( isset( $_COOKIE["language"] ) ) { 
+       $lang = $_COOKIE["language"]; 
+    }
+
+    if( isset( $_POST["lang"] ) ) {
+       $lang = $_POST["lang"];
+       $refresh = $_SERVER['PHP_SELF'];
+       header( "Location: $refresh");
+	   setcookie ( 'language', $lang, time() + 60*60*24*30, '/','localhost');
+	   
+    }
+include './languages.php';
+
+/*****************Fim Cookies*****************/
+
+
 define('DB_DRIVER', 'mysql');
 define('DB_SERVER', 'localhost');
 define('DB_SERVER_USERNAME', 'root');

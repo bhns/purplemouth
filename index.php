@@ -5,6 +5,10 @@
  */
 require_once './_config.php';
 include './_header.php';
+error_reporting(E_ERROR);
+
+
+
 /*******PAGINATION CODE STARTS*****************/
 if (!(isset($_GET['pagenum']))) {
   $pagenum = 1;
@@ -67,223 +71,234 @@ try {
 
     <div class="panel panel-primary">
       <div class="intro color4">
-	  <div class="field third">
-													<label for="demo-category">Language</label>
-													<div class="select-wrapper">
-														<select name="demo-category" id="demo-category">
-															<option value="">-</option>
-														    <option value="1">English</option>
-                                                            <option value="1">Русский</option>
-                                                            <option value="1">Español</option>
-                                                            <option value="1">Portuguese</option>
-                                                            <option value="1">日本語</option>
-                                                            <option value="1">한국어</option>
-                                                            <option value="1">Deutsch</option>
-                                                            <option value="1">Italiano</option>
-                                                            <option value="1">Global</option>
-                                                            <option value="1">English</option>
-                                                            <option value="1">Español</option>
-                                                            <option value="1">Esperanto</option>
-                                                            <option value="1">Français</option>
-                                                            <option value="1">Ido</option>
-                                                            <option value="1">Interlingua</option>
-                                                            <option value="1">Interlingue</option>
-                                                            <option value="1">LinguaFrancaNova</option>
-                                                            <option value="1">Avañe'ẽ</option>
-                                                            <option value="1">Aymararu</option>
-                                                            <option value="1">English</option>
-                                                            <option value="1">Español</option>
-                                                            <option value="1">Français</option>
-                                                            <option value="1">Kreyòlayisyen</option>
-                                                            <option value="1">Nederlands</option>
-                                                            <option value="1">Nāhuatl</option>
-                                                            <option value="1">Patois</option>
-                                                            <option value="1">RunaSimi</option>
-                                                            <option value="1">Tsetsêhestâhese</option>
-                                                            <option value="1">ייִדיש</option>
-                                                            <option value="1">Europa</option>
-                                                            <option value="1">Башҡортса</option>
-                                                            <option value="1">Беларуская</option>
-                                                            <option value="1">Беларуская(тарашкевіца)‎</option>
-                                                            <option value="1">Български</option>
-                                                            <option value="1">Кырыкмары</option>
-                                                            <option value="1">Нохчийн</option>
-                                                            <option value="1">Олыкмарий</option>
-                                                            <option value="1">Русиньскый</option>
-                                                            <option value="1">Русский</option>
-                                                            <option value="1">Сахатыла</option>
-                                                            <option value="1">Српски/srpski</option>
-                                                            <option value="1">Татарча/tatarça</option>
-                                                            <option value="1">Українська</option>
-                                                            <option value="1">Хальмг</option>
-                                                            <option value="1">Қазақша</option>
-                                                            <option value="1">Ελληνικά</option>
-                                                            <option value="1">Alemannisch</option>
-                                                            <option value="1">Aragonés</option>
-                                                            <option value="1">Armãneashti</option>
-                                                            <option value="1">Asturianu</option>
-                                                            <option value="1">Azərbaycanca</option>
-                                                            <option value="1">Bosanski</option>
-                                                            <option value="1">Brezhoneg</option>
-                                                            <option value="1">Català</option>
-                                                            <option value="1">Corsu</option>
-                                                            <option value="1">Cymraeg</option>
-                                                            <option value="1">Dansk</option>
-                                                            <option value="1">Deutsch</option>
-                                                            <option value="1">Eesti</option>
-                                                            <option value="1">Emiliànerumagnòl</option>
-                                                            <option value="1">English</option>
-                                                            <option value="1">Español</option>
-                                                            <option value="1">Estremeñu</option>
-                                                            <option value="1">Euskara</option>
-                                                            <option value="1">Français</option>
-                                                            <option value="1">Furlan</option>
-                                                            <option value="1">Galego</option>
-                                                            <option value="1">Gàidhlig</option>
-                                                            <option value="1">Hrvatski</option>
-                                                            <option value="1">Italiano</option>
-                                                            <option value="1">Kernowek</option>
-                                                            <option value="1">Latina</option>
-                                                            <option value="1">Latviešu</option>
-                                                            <option value="1">Lietuvių</option>
-                                                            <option value="1">Limburgs</option>
-                                                            <option value="1">Lumbaart</option>
-                                                            <option value="1">Lëtzebuergesch</option>
-                                                            <option value="1">Magyar</option>
-                                                            <option value="1">Nederlands</option>
-                                                            <option value="1">Nedersaksies</option>
-                                                            <option value="1">Nordfriisk</option>
-                                                            <option value="1">Norsk</option>
-                                                            <option value="1">Norsknynorsk</option>
-                                                            <option value="1">Occitan</option>
-                                                            <option value="1">Picard</option>
-                                                            <option value="1">Polski</option>
-                                                            <option value="1">Pälzisch</option>
-                                                            <option value="1">Romani</option>
-                                                            <option value="1">Română</option>
-                                                            <option value="1">Sardu</option>
-                                                            <option value="1">Scots</option>
-                                                            <option value="1">Shqip</option>
-                                                            <option value="1">Sicilianu</option>
-                                                            <option value="1">Slovenčina</option>
-                                                            <option value="1">Slovenščina</option>
-                                                            <option value="1">Srpskohrvatski/српскохрватс</option>
-                                                            <option value="1">Suomi</option>
-                                                            <option value="1">Svenska</option>
-                                                            <option value="1">Taqbaylit</option>
-                                                            <option value="1">Türkçe</option>
-                                                            <option value="1">Vepsänkel’</option>
-                                                            <option value="1">Vèneto</option>
-                                                            <option value="1">Walon</option>
-                                                            <option value="1">West-Vlams</option>
-                                                            <option value="1">Zazaki</option>
-                                                            <option value="1">Ænglisc</option>
-                                                            <option value="1">Íslenska</option>
-                                                            <option value="1">Čeština</option>
-                                                            <option value="1">Žemaitėška</option>
-                                                            <option value="1">ייִדיש</option>
-                                                            <option value="1">Հայերեն</option>
-                                                            <option value="1">მარგალური</option>
-                                                            <option value="1">ქართული</option>
-                                                            <option value="1">MédioOriente</option>
-                                                            <option value="1">اردو</option>
-                                                            <option value="1">العربية</option>
-                                                            <option value="1">تۆرکجه</option>
-                                                            <option value="1">فارسی</option>
-                                                            <option value="1">مازِرونی</option>
-                                                            <option value="1">مصرى</option>
-                                                            <option value="1">پنجابی</option>
-                                                            <option value="1">کوردی</option>
-                                                            <option value="1">گیلکی</option>
-                                                            <option value="1">Русский</option>
-                                                            <option value="1">Azərbaycanca</option>
-                                                            <option value="1">English</option>
-                                                            <option value="1">Türkçe</option>
-                                                            <option value="1">ייִדיש</option>
-                                                            <option value="1">עברית</option>
-                                                            <option value="1">ܐܪܡܝܐ</option>
-                                                            <option value="1">മലയാളം</option>
-                                                            <option value="1">Հայերեն</option>
-                                                            <option value="1">África</option>
-                                                            <option value="1">አማርኛ</option>
-                                                            <option value="1">ChiShona</option>
-                                                            <option value="1">English</option>
-                                                            <option value="1">Español</option>
-                                                            <option value="1">IsiXhosa</option>
-                                                            <option value="1">IsiZulu</option>
-                                                            <option value="1">Kabɩyɛ</option>
-                                                            <option value="1">Kiswahili</option>
-                                                            <option value="1">Lingála</option>
-                                                            <option value="1">Malagasy</option>
-                                                            <option value="1">Soomaaliga</option>
-                                                            <option value="1">Taqbaylit</option>
-                                                            <option value="1">Wolof</option>
-                                                            <option value="1">Ásia</option>
-                                                            <option value="1">اردو</option>
-                                                            <option value="1">تۆرکجه</option>
-                                                            <option value="1">فارسی</option>
-                                                            <option value="1">مازِرونی</option>
-                                                            <option value="1">پنجابی</option>
-                                                            <option value="1">گیلکی</option>
-                                                            <option value="1">中文</option>
-                                                            <option value="1">吴语</option>
-                                                            <option value="1">日本語</option>
-                                                            <option value="1">粵語</option>
-                                                            <option value="1">贛語</option>
-                                                            <option value="1">한국어</option>
-                                                            <option value="1">Кыргызча</option>
-                                                            <option value="1">Русский</option>
-                                                            <option value="1">Сахатыла</option>
-                                                            <option value="1">Тоҷикӣ</option>
-                                                            <option value="1">Қазақша</option>
-                                                            <option value="1">Acèh</option>
-                                                            <option value="1">BahasaBanjar</option>
-                                                            <option value="1">BahasaIndonesia</option>
-                                                            <option value="1">BahasaMelayu</option>
-                                                            <option value="1">BasaJawa</option>
-                                                            <option value="1">BasaSunda</option>
-                                                            <option value="1">BasoMinangkabau</option>
-                                                            <option value="1">Bân-lâm-gú</option>
-                                                            <option value="1">English</option>
-                                                            <option value="1">FijiHindi</option>
-                                                            <option value="1">客家語/Hak-kâ-ngî</option>
-                                                            <option value="1">Ilokano</option>
-                                                            <option value="1">Mìng-dĕ̤ng-ngṳ̄</option>
-                                                            <option value="1">Oʻzbekcha/ўзбекча</option>
-                                                            <option value="1">Tagalog</option>
-                                                            <option value="1">TiếngViệt</option>
-                                                            <option value="1">Winaray</option>
-                                                            <option value="1">Zazaki</option>
-                                                            <option value="1">नेपालभाषा</option>
-                                                            <option value="1">नेपाली</option>
-                                                            <option value="1">भोजपुरी</option>
-                                                            <option value="1">हिन्दी</option>
-                                                            <option value="1">অসমীয়া</option>
-                                                            <option value="1">বাংলা</option>
-                                                            <option value="1">ਪੰਜਾਬੀ</option>
-                                                            <option value="1">ଓଡ଼ିଆ</option>
-                                                            <option value="1">தமிழ்</option>
-                                                            <option value="1">తెలుగు</option>
-                                                            <option value="1">ಕನ್ನಡ</option>
-                                                            <option value="1">മലയാളം</option>
-                                                            <option value="1">བོད་ཡིག</option>
-                                                            <option value="1">ไทย</option>
-                                                            <option value="1">ລາວ</option>
-                                                            <option value="1">ᨅᨔᨕᨘᨁᨗ</option>
-                                                            <option value="1">Pacífico</option>
-                                                            <option value="1">Acèh</option>
-                                                            <option value="1">BasaJawa</option>
-                                                            <option value="1">English</option>
-                                                            <option value="1">Español</option>
-                                                            <option value="1">FijiHindi</option>
-                                                            <option value="1">Norfuk/Pitkern</option>
-														</select>
-													</div>
-												</div>
+	  
+		   <div class="field third">
+
+
+   <!--Botoes pesquisar e adiconar-->
+		    <form action="index.php" method="post">
+              <div class="field third"><br><br>
+			  
+			  <label for="demo-category"><?php echo $text[$lang]['lingua']; if( isset( $_COOKIE["language"] ) ) { echo $_COOKIE["language"]; } else { echo "<em> not set</em>"; } ?></label>
+            
+			 <div class="select-wrapper">
+			<select name="lang" id="lang">
+			<option value=""><?php echo $text[$lang]['lingua_name']?></option>
+<option value="en"<?php if( $_COOKIE["language"] == "English" ) { echo "selected"; } ?>>English</option>
+<option value="ruski"<?php if( $_COOKIE["language"] == "Русский" ) { echo "selected"; } ?>>Русский</option>
+<option value="fr"<?php if( $_COOKIE["language"] == "Français" ) { echo "selected"; } ?>>Français</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Español" ) { echo "selected"; } ?>>Español</option>
+<option value="pt"<?php if( $_COOKIE["language"] == "Portuguese" ) { echo "selected"; } ?>>Portuguese</option>
+<option value="en"<?php if( $_COOKIE["language"] == "日本語" ) { echo "selected"; } ?>>日本語</option>
+<option value="en"<?php if( $_COOKIE["language"] == "한국어" ) { echo "selected"; } ?>>한국어</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Deutsch" ) { echo "selected"; } ?>>Deutsch</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Italiano" ) { echo "selected"; } ?>>Italiano</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Español" ) { echo "selected"; } ?>>Español</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Esperanto" ) { echo "selected"; } ?>>Esperanto</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Français" ) { echo "selected"; } ?>>Français</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Ido" ) { echo "selected"; } ?>>Ido</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Interlingua" ) { echo "selected"; } ?>>Interlingua</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Interlingue" ) { echo "selected"; } ?>>Interlingue</option>
+<option value="en"<?php if( $_COOKIE["language"] == "LinguaFrancaNova" ) { echo "selected"; } ?>>LinguaFrancaNova</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Avañe'ẽ" ) { echo "selected"; } ?>>Avañe'ẽ</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Aymararu" ) { echo "selected"; } ?>>Aymararu</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Español" ) { echo "selected"; } ?>>Español</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Français" ) { echo "selected"; } ?>>Français</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Kreyòlayisyen" ) { echo "selected"; } ?>>Kreyòlayisyen</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Nederlands" ) { echo "selected"; } ?>>Nederlands</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Nāhuatl" ) { echo "selected"; } ?>>Nāhuatl</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Patois" ) { echo "selected"; } ?>>Patois</option>
+<option value="en"<?php if( $_COOKIE["language"] == "RunaSimi" ) { echo "selected"; } ?>>RunaSimi</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Tsetsêhestâhese" ) { echo "selected"; } ?>>Tsetsêhestâhese</option>
+<option value="en"<?php if( $_COOKIE["language"] == "ייִדיש" ) { echo "selected"; } ?>>ייִדיש</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Europa" ) { echo "selected"; } ?>>Europa</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Башҡортса" ) { echo "selected"; } ?>>Башҡортса</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Беларуская" ) { echo "selected"; } ?>>Беларуская</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Беларуская(тарашкевіца)‎" ) { echo "selected"; } ?>>Беларуская(тарашкевіца)‎</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Български" ) { echo "selected"; } ?>>Български</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Кырыкмары" ) { echo "selected"; } ?>>Кырыкмары</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Нохчийн" ) { echo "selected"; } ?>>Нохчийн</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Олыкмарий" ) { echo "selected"; } ?>>Олыкмарий</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Русиньскый" ) { echo "selected"; } ?>>Русиньскый</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Русский" ) { echo "selected"; } ?>>Русский</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Сахатыла" ) { echo "selected"; } ?>>Сахатыла</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Српски/srpski" ) { echo "selected"; } ?>>Српски/srpski</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Татарча/tatarça" ) { echo "selected"; } ?>>Татарча/tatarça</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Українська" ) { echo "selected"; } ?>>Українська</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Хальмг" ) { echo "selected"; } ?>>Хальмг</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Қазақша" ) { echo "selected"; } ?>>Қазақша</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Ελληνικά" ) { echo "selected"; } ?>>Ελληνικά</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Alemannisch" ) { echo "selected"; } ?>>Alemannisch</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Aragonés" ) { echo "selected"; } ?>>Aragonés</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Armãneashti" ) { echo "selected"; } ?>>Armãneashti</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Asturianu" ) { echo "selected"; } ?>>Asturianu</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Azərbaycanca" ) { echo "selected"; } ?>>Azərbaycanca</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Bosanski" ) { echo "selected"; } ?>>Bosanski</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Brezhoneg" ) { echo "selected"; } ?>>Brezhoneg</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Català" ) { echo "selected"; } ?>>Català</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Corsu" ) { echo "selected"; } ?>>Corsu</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Cymraeg" ) { echo "selected"; } ?>>Cymraeg</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Dansk" ) { echo "selected"; } ?>>Dansk</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Deutsch" ) { echo "selected"; } ?>>Deutsch</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Eesti" ) { echo "selected"; } ?>>Eesti</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Emiliànerumagnòl" ) { echo "selected"; } ?>>Emiliànerumagnòl</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Español" ) { echo "selected"; } ?>>Español</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Estremeñu" ) { echo "selected"; } ?>>Estremeñu</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Euskara" ) { echo "selected"; } ?>>Euskara</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Français" ) { echo "selected"; } ?>>Français</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Furlan" ) { echo "selected"; } ?>>Furlan</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Galego" ) { echo "selected"; } ?>>Galego</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Gàidhlig" ) { echo "selected"; } ?>>Gàidhlig</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Hrvatski" ) { echo "selected"; } ?>>Hrvatski</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Italiano" ) { echo "selected"; } ?>>Italiano</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Kernowek" ) { echo "selected"; } ?>>Kernowek</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Latina" ) { echo "selected"; } ?>>Latina</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Latviešu" ) { echo "selected"; } ?>>Latviešu</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Lietuvių" ) { echo "selected"; } ?>>Lietuvių</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Limburgs" ) { echo "selected"; } ?>>Limburgs</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Lumbaart" ) { echo "selected"; } ?>>Lumbaart</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Lëtzebuergesch" ) { echo "selected"; } ?>>Lëtzebuergesch</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Magyar" ) { echo "selected"; } ?>>Magyar</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Nederlands" ) { echo "selected"; } ?>>Nederlands</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Nedersaksies" ) { echo "selected"; } ?>>Nedersaksies</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Nordfriisk" ) { echo "selected"; } ?>>Nordfriisk</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Norsk" ) { echo "selected"; } ?>>Norsk</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Norsknynorsk" ) { echo "selected"; } ?>>Norsknynorsk</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Occitan" ) { echo "selected"; } ?>>Occitan</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Picard" ) { echo "selected"; } ?>>Picard</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Polski" ) { echo "selected"; } ?>>Polski</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Pälzisch" ) { echo "selected"; } ?>>Pälzisch</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Romani" ) { echo "selected"; } ?>>Romani</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Română" ) { echo "selected"; } ?>>Română</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Sardu" ) { echo "selected"; } ?>>Sardu</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Scots" ) { echo "selected"; } ?>>Scots</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Shqip" ) { echo "selected"; } ?>>Shqip</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Sicilianu" ) { echo "selected"; } ?>>Sicilianu</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Slovenčina" ) { echo "selected"; } ?>>Slovenčina</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Slovenščina" ) { echo "selected"; } ?>>Slovenščina</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Srpskohrvatski/српскохрватс" ) { echo "selected"; } ?>>Srpskohrvatski/српскохрватс</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Suomi" ) { echo "selected"; } ?>>Suomi</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Svenska" ) { echo "selected"; } ?>>Svenska</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Taqbaylit" ) { echo "selected"; } ?>>Taqbaylit</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Türkçe" ) { echo "selected"; } ?>>Türkçe</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Vepsänkel’" ) { echo "selected"; } ?>>Vepsänkel’</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Vèneto" ) { echo "selected"; } ?>>Vèneto</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Walon" ) { echo "selected"; } ?>>Walon</option>
+<option value="en"<?php if( $_COOKIE["language"] == "West-Vlams" ) { echo "selected"; } ?>>West-Vlams</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Zazaki" ) { echo "selected"; } ?>>Zazaki</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Ænglisc" ) { echo "selected"; } ?>>Ænglisc</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Íslenska" ) { echo "selected"; } ?>>Íslenska</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Čeština" ) { echo "selected"; } ?>>Čeština</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Žemaitėška" ) { echo "selected"; } ?>>Žemaitėška</option>
+<option value="en"<?php if( $_COOKIE["language"] == "ייִדיש" ) { echo "selected"; } ?>>ייִדיש</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Հայերեն" ) { echo "selected"; } ?>>Հայերեն</option>
+<option value="en"<?php if( $_COOKIE["language"] == "მარგალური" ) { echo "selected"; } ?>>მარგალური</option>
+<option value="en"<?php if( $_COOKIE["language"] == "ქართული" ) { echo "selected"; } ?>>ქართული</option>
+<option value="en"<?php if( $_COOKIE["language"] == "MédioOriente" ) { echo "selected"; } ?>>MédioOriente</option>
+<option value="en"<?php if( $_COOKIE["language"] == "اردو" ) { echo "selected"; } ?>>اردو</option>
+<option value="en"<?php if( $_COOKIE["language"] == "العربية" ) { echo "selected"; } ?>>العربية</option>
+<option value="en"<?php if( $_COOKIE["language"] == "تۆرکجه" ) { echo "selected"; } ?>>تۆرکجه</option>
+<option value="en"<?php if( $_COOKIE["language"] == "فارسی" ) { echo "selected"; } ?>>فارسی</option>
+<option value="en"<?php if( $_COOKIE["language"] == "مازِرونی" ) { echo "selected"; } ?>>مازِرونی</option>
+<option value="en"<?php if( $_COOKIE["language"] == "مصرى" ) { echo "selected"; } ?>>مصرى</option>
+<option value="en"<?php if( $_COOKIE["language"] == "پنجابی" ) { echo "selected"; } ?>>پنجابی</option>
+<option value="en"<?php if( $_COOKIE["language"] == "کوردی" ) { echo "selected"; } ?>>کوردی</option>
+<option value="en"<?php if( $_COOKIE["language"] == "گیلکی" ) { echo "selected"; } ?>>گیلکی</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Русский" ) { echo "selected"; } ?>>Русский</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Azərbaycanca" ) { echo "selected"; } ?>>Azərbaycanca</option>
+<option value="en"<?php if( $_COOKIE["language"] == "English" ) { echo "selected"; } ?>>English</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Türkçe" ) { echo "selected"; } ?>>Türkçe</option>
+<option value="en"<?php if( $_COOKIE["language"] == "ייִדיש" ) { echo "selected"; } ?>>ייִדיש</option>
+<option value="en"<?php if( $_COOKIE["language"] == "עברית" ) { echo "selected"; } ?>>עברית</option>
+<option value="en"<?php if( $_COOKIE["language"] == "ܐܪܡܝܐ" ) { echo "selected"; } ?>>ܐܪܡܝܐ</option>
+<option value="en"<?php if( $_COOKIE["language"] == "മലയാളം" ) { echo "selected"; } ?>>മലയാളം</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Հայերեն" ) { echo "selected"; } ?>>Հայերեն</option>
+<option value="en"<?php if( $_COOKIE["language"] == "África" ) { echo "selected"; } ?>>África</option>
+<option value="en"<?php if( $_COOKIE["language"] == "አማርኛ" ) { echo "selected"; } ?>>አማርኛ</option>
+<option value="en"<?php if( $_COOKIE["language"] == "ChiShona" ) { echo "selected"; } ?>>ChiShona</option>
+<option value="en"<?php if( $_COOKIE["language"] == "English" ) { echo "selected"; } ?>>English</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Español" ) { echo "selected"; } ?>>Español</option>
+<option value="en"<?php if( $_COOKIE["language"] == "IsiXhosa" ) { echo "selected"; } ?>>IsiXhosa</option>
+<option value="en"<?php if( $_COOKIE["language"] == "IsiZulu" ) { echo "selected"; } ?>>IsiZulu</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Kabɩyɛ" ) { echo "selected"; } ?>>Kabɩyɛ</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Kiswahili" ) { echo "selected"; } ?>>Kiswahili</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Lingála" ) { echo "selected"; } ?>>Lingála</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Malagasy" ) { echo "selected"; } ?>>Malagasy</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Soomaaliga" ) { echo "selected"; } ?>>Soomaaliga</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Taqbaylit" ) { echo "selected"; } ?>>Taqbaylit</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Wolof" ) { echo "selected"; } ?>>Wolof</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Ásia" ) { echo "selected"; } ?>>Ásia</option>
+<option value="en"<?php if( $_COOKIE["language"] == "اردو" ) { echo "selected"; } ?>>اردو</option>
+<option value="en"<?php if( $_COOKIE["language"] == "تۆرکجه" ) { echo "selected"; } ?>>تۆرکجه</option>
+<option value="en"<?php if( $_COOKIE["language"] == "فارسی" ) { echo "selected"; } ?>>فارسی</option>
+<option value="en"<?php if( $_COOKIE["language"] == "مازِرونی" ) { echo "selected"; } ?>>مازِرونی</option>
+<option value="en"<?php if( $_COOKIE["language"] == "پنجابی" ) { echo "selected"; } ?>>پنجابی</option>
+<option value="en"<?php if( $_COOKIE["language"] == "گیلکی" ) { echo "selected"; } ?>>گیلکی</option>
+<option value="en"<?php if( $_COOKIE["language"] == "中文" ) { echo "selected"; } ?>>中文</option>
+<option value="en"<?php if( $_COOKIE["language"] == "吴语" ) { echo "selected"; } ?>>吴语</option>
+<option value="en"<?php if( $_COOKIE["language"] == "日本語" ) { echo "selected"; } ?>>日本語</option>
+<option value="en"<?php if( $_COOKIE["language"] == "粵語" ) { echo "selected"; } ?>>粵語</option>
+<option value="en"<?php if( $_COOKIE["language"] == "贛語" ) { echo "selected"; } ?>>贛語</option>
+<option value="en"<?php if( $_COOKIE["language"] == "한국어" ) { echo "selected"; } ?>>한국어</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Кыргызча" ) { echo "selected"; } ?>>Кыргызча</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Русский" ) { echo "selected"; } ?>>Русский</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Сахатыла" ) { echo "selected"; } ?>>Сахатыла</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Тоҷикӣ" ) { echo "selected"; } ?>>Тоҷикӣ</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Қазақша" ) { echo "selected"; } ?>>Қазақша</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Acèh" ) { echo "selected"; } ?>>Acèh</option>
+<option value="en"<?php if( $_COOKIE["language"] == "BahasaBanjar" ) { echo "selected"; } ?>>BahasaBanjar</option>
+<option value="en"<?php if( $_COOKIE["language"] == "BahasaIndonesia" ) { echo "selected"; } ?>>BahasaIndonesia</option>
+<option value="en"<?php if( $_COOKIE["language"] == "BahasaMelayu" ) { echo "selected"; } ?>>BahasaMelayu</option>
+<option value="en"<?php if( $_COOKIE["language"] == "BasaJawa" ) { echo "selected"; } ?>>BasaJawa</option>
+<option value="en"<?php if( $_COOKIE["language"] == "BasaSunda" ) { echo "selected"; } ?>>BasaSunda</option>
+<option value="en"<?php if( $_COOKIE["language"] == "BasoMinangkabau" ) { echo "selected"; } ?>>BasoMinangkabau</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Bân-lâm-gú" ) { echo "selected"; } ?>>Bân-lâm-gú</option>
+<option value="en"<?php if( $_COOKIE["language"] == "English" ) { echo "selected"; } ?>>English</option>
+<option value="en"<?php if( $_COOKIE["language"] == "FijiHindi" ) { echo "selected"; } ?>>FijiHindi</option>
+<option value="en"<?php if( $_COOKIE["language"] == "客家語/Hak-kâ-ngî" ) { echo "selected"; } ?>>客家語/Hak-kâ-ngî</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Ilokano" ) { echo "selected"; } ?>>Ilokano</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Mìng-dĕ̤ng-ngṳ̄" ) { echo "selected"; } ?>>Mìng-dĕ̤ng-ngṳ̄</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Oʻzbekcha/ўзбекча" ) { echo "selected"; } ?>>Oʻzbekcha/ўзбекча</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Tagalog" ) { echo "selected"; } ?>>Tagalog</option>
+<option value="en"<?php if( $_COOKIE["language"] == "TiếngViệt" ) { echo "selected"; } ?>>TiếngViệt</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Winaray" ) { echo "selected"; } ?>>Winaray</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Zazaki" ) { echo "selected"; } ?>>Zazaki</option>
+<option value="en"<?php if( $_COOKIE["language"] == "नेपालभाषा" ) { echo "selected"; } ?>>नेपालभाषा</option>
+<option value="en"<?php if( $_COOKIE["language"] == "नेपाली" ) { echo "selected"; } ?>>नेपाली</option>
+<option value="en"<?php if( $_COOKIE["language"] == "भोजपुरी" ) { echo "selected"; } ?>>भोजपुरी</option>
+<option value="en"<?php if( $_COOKIE["language"] == "हिन्दी" ) { echo "selected"; } ?>>हिन्दी</option>
+<option value="en"<?php if( $_COOKIE["language"] == "অসমীয়া" ) { echo "selected"; } ?>>অসমীয়া</option>
+<option value="en"<?php if( $_COOKIE["language"] == "বাংলা" ) { echo "selected"; } ?>>বাংলা</option>
+<option value="en"<?php if( $_COOKIE["language"] == "ਪੰਜਾਬੀ" ) { echo "selected"; } ?>>ਪੰਜਾਬੀ</option>
+<option value="en"<?php if( $_COOKIE["language"] == "ଓଡ଼ିଆ" ) { echo "selected"; } ?>>ଓଡ଼ିଆ</option>
+<option value="en"<?php if( $_COOKIE["language"] == "தமிழ்" ) { echo "selected"; } ?>>தமிழ்</option>
+<option value="en"<?php if( $_COOKIE["language"] == "తెలుగు" ) { echo "selected"; } ?>>తెలుగు</option>
+<option value="en"<?php if( $_COOKIE["language"] == "ಕನ್ನಡ" ) { echo "selected"; } ?>>ಕನ್ನಡ</option>
+<option value="en"<?php if( $_COOKIE["language"] == "മലയാളം" ) { echo "selected"; } ?>>മലയാളം</option>
+<option value="en"<?php if( $_COOKIE["language"] == "བོད་ཡིག" ) { echo "selected"; } ?>>བོད་ཡིག</option>
+<option value="en"<?php if( $_COOKIE["language"] == "ไทย" ) { echo "selected"; } ?>>ไทย</option>
+<option value="en"<?php if( $_COOKIE["language"] == "ລາວ" ) { echo "selected"; } ?>>ລາວ</option>
+<option value="en"<?php if( $_COOKIE["language"] == "ᨅᨔᨕᨘᨁᨗ" ) { echo "selected"; } ?>>ᨅᨔᨕᨘᨁᨗ</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Pacífico" ) { echo "selected"; } ?>>Pacífico</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Acèh" ) { echo "selected"; } ?>>Acèh</option>
+<option value="en"<?php if( $_COOKIE["language"] == "BasaJawa" ) { echo "selected"; } ?>>BasaJawa</option>
+<option value="en"<?php if( $_COOKIE["language"] == "English" ) { echo "selected"; } ?>>English</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Español" ) { echo "selected"; } ?>>Español</option>
+<option value="en"<?php if( $_COOKIE["language"] == "FijiHindi" ) { echo "selected"; } ?>>FijiHindi</option>
+<option value="en"<?php if( $_COOKIE["language"] == "Norfuk/Pitkern" ) { echo "selected"; } ?>>Norfuk/Pitkern</option>
+			</select>
+			</div>
+			<button class="button small"><?php echo $text[$lang]['selectlang']; ?></button>
+			
+			</div>
+            <!--ALguma coisa-->
+			 </form>
+									
+        </div>
 			<br>
-	  <a href="index.php" class="button small primary color4">home</a><br>
+	  <a href="index.php" class="button small primary color4"><?php echo $text[$lang]['bt_home']; ?></a><br>
 			    <?php if (count($results) > 0) { ?>
-				<h4>Purple Mouth</h4>
+				<h4><?php echo $text[$lang]['title_home']; ?></h4>
 																		<?php if ($ERROR_MSG <> "") { ?>
     <div id="wrapper<?php echo $ERROR_TYPE ?>">
      <!-- <button data-dismiss="alert" class="close" type="button">×</button>-->
@@ -297,17 +312,16 @@ try {
           <span class="pull-left">
 		  <!--Botoes pesquisar e adiconar-->
             <label class="col-lg-12 control-label" for="keyword" style="padding-right: 0;">
-              <input type="text" value="<?php echo $_GET["keyword"]; ?>" placeholder="Search by word name" id="" class="form-control" name="keyword" style="height: 41px;">
+              <input type="text" value="<?php echo $_GET["keyword"]; ?>" placeholder="<?php echo $text[$lang]['lb_tips']; ?>" id="" class="form-control" name="keyword" style="height: 41px;">
             </label>
             </span>
-            <button class="button small">Search</button>
-			<a href="_edit_word.php" class="button small">Add New Word</a><br><br>
-			<p>Total Records : <?php echo $total_count; ?></p><br>   
+            <button class="button small"><?php echo $text[$lang]['bt_search']; ?></button>
+			<a href="_edit_word.php" class="button small"><?php echo $text[$lang]['bt_add_new_word']; ?></a><br>
+			<p><?php echo $text[$lang]['lb_records']; ?><?php echo $total_count; ?></p>  
 			<div class="copyright">&copy;lebestation</div>
 			<a href="http://bhns.com.br">BHNS</a>
 			<!-- <?php echo $last_consult_sql; ?><br> 
 			 <?php echo $sql ; ?><br> -->
-			 
 
 
  	    </div>
@@ -317,7 +331,8 @@ try {
 		 <div class="class=inner columns divided">
 
 			<div class="span-3-25"><br>   <br>   
-				<h2 class="major">Purple Mouth</h2><br>   
+				<h2 class="major"><?php echo $text[$lang]['title_home']; ?></h2><br> 
+                <p><?php echo $text[$lang]['text_home']; ?></p>				
 				<p>This is a project OpenSource for help you improve your grammar play with the words one way very easy. </p>
 				<p>Total Words Records : <?php echo $total_count; ?> Can you help with the project try record a word.</p><br>   
 				<a href="_edit_word.php" class="button small">Add New Word</a><br>  
@@ -383,6 +398,7 @@ try {
 											<li class="icon fa-medium"><a href="#">medium.com/untitled</a></li>
 										</ul>
 									</div>
+									<p><?php echo $text[$lang]['filename'] . $_SERVER['PHP_SELF']; ?></p>
 									</div>
 									
 

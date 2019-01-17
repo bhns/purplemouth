@@ -5,6 +5,7 @@
  */
 require_once './_config.php';
 include './_header.php';
+
 try {
    $sql = "SELECT * FROM main_words WHERE 1 AND word_id = :cid";
    $check_ = $DB->prepare($sql);
@@ -22,7 +23,7 @@ try {
 
     <div class="panel panel-primary">
       <div class="intro color2">
-        <h3 class="panel-title"><?php echo ($_GET["m"] == "update") ? "Edit" : "Add"; ?> New Word</h3>
+        <h3 class="panel-title"><?php echo ($_GET["m"] == "update") ? "Edit" : "Add"; ?> <?php echo $text[$lang]['lb_new_word']?></h3>
 		
 		  <form class="form-horizontal" name="contact_form" id="contact_form" enctype="multipart/form-data" method="post" action="_main_.php">
           <input type="hidden" name="mode" value="<?php echo ($_GET["m"] == "update") ? "update_old" : "add_new"; ?>" >
@@ -31,14 +32,14 @@ try {
           <input type="hidden" name="pagenum" value="<?php echo $_GET["pagenum"]; ?>" >
           <fieldset>
             <div class="field half">
-              <label for="word_name"><span class="required">*</span> Word:</label>
+              <label for="word_name"><span class="required">*</span> <?php echo $text[$lang]['lb_word']?>:</label>
               <div class="span-3-10">
                 <input type="text" value="<?php echo $results[0]["word_name"] ?>" placeholder="First Name" id="word_name" class="color2" name="word_name"><span id="word_name_err" class="error"></span>
               </div>
             </div>
 			
 									<div class="field third">
-													<label for="demo-category">Language</label>
+													<label for="demo-category"><?php echo $text[$lang]['lingua_name']?></label>
 													<div class="select-wrapper">
 														<select name="demo-category" id="demo-category">
 															<option value="">-</option>
@@ -253,14 +254,14 @@ try {
 			
             
             <div class="field half">
-              <label for="category_word">Category:</label>
+              <label for="category_word"><?php echo $text[$lang]['lb_category']?>:</label>
               <div class="span-3-10">
                 <input type="text" value="<?php echo $results[0]["category_word"] ?>" placeholder="Category" id="category_word" class="color2" name="category_word">
               </div>
             </div>
 			
 			        <div class="field half">
-              <label for="pronunciation">Pronunciation:</label>
+              <label for="pronunciation"><?php echo $text[$lang]['lb_pronunciation']?>:</label>
               <div class="span-3-10">
                 <input type="text" value="<?php echo $results[0]["pronunciation"] ?>" placeholder="Speaking" id="pronunciation" class="color2" name="pronunciation">
               </div>
@@ -268,7 +269,7 @@ try {
 			
 			
             <div class="field half">
-              <label for="type_name"><span class="required">*</span>Empty</label>
+              <label for="type_name"><span class="required">*</span><?php echo $text[$lang]['lb_empty_']?></label>
               <div class="span-3-10">
                 <input type="text" value="<?php echo $results[0]["type_name"] ?>" placeholder="Empty" id="type_name" class="color2" name="type_name"><span id="type_name_err" class="error"></span>
               </div>
@@ -277,7 +278,7 @@ try {
         
             
             <div class="field half">
-              <label for="color_"><span class="required">*</span>Empty 1:</label>
+              <label for="color_"><span class="required">*</span><?php echo $text[$lang]['lb_empty_1']?>:</label>
               <div class="span-3-10">
                 <input type="text" value="<?php echo $results[0]["color_"] ?>" placeholder="Empty" id="color_" class="color2" name="color_"><span id="color__err" class="error"></span>
                <!-- <span class="help-block">Maximum of 10 digits only and only numbers.</span>-->
@@ -285,7 +286,7 @@ try {
             </div>
             
             <div class="field half">
-              <label for="frequen_">Empty 2:</label>
+              <label for="frequen_"><?php echo $text[$lang]['lb_empty_2']?>:</label>
               <div class="span-3-10">
                 <input type="text" value="<?php echo $results[0]["frequen_"] ?>" placeholder="Empty" id="frequen_" class="color2" name="frequen_"><span id="frequen__err" class="error"></span>
                 <!--<span class="help-block">Maximum of 10 digits only and only numbers.</span>-->
@@ -306,7 +307,7 @@ try {
             ?>
 		   <div class="span-3-10">
             <div>
-              <label for="word_pic">Picture:</label>
+              <label for="word_pic"><?php echo $text[$lang]['lb_picture']?>:</label>
               <div class="span-3-10">
                 <input type="file"  id="word_pic" class="form-control file" name="word_pic"><span id="word_pic_err" class="error"></span>
                 <span class="help-block">Must me jpg, jpeg, png, gif, bmp image only.</span>
@@ -319,7 +320,7 @@ try {
             
             <div class="fields">
             <div class="field">
-              <label for="notes">Notes :</label>
+              <label for="notes"><?php echo $text[$lang]['lb_notes']?>:</label>
               <div class="span-3-10">
                 <textarea id="notes" name="notes" rows="3" class="color2"><?php echo $results[0]["notes"] ?></textarea>
               </div>
@@ -328,7 +329,7 @@ try {
             <div class="field half">
 
 			      <div class="span-3-5">
-              <label for="email_id"><span class="required">*</span>update by user :</label>
+              <label for="email_id"><span class="required">*</span><?php echo $text[$lang]['lb_user']?> :</label>
               <div class="span-3-5">
                 <input type="text" value="<?php echo $results[0]["email_address"] ?>" placeholder="User or email" id="email_id" class="color3" name="email_id"><span id="email_id_err" class="error"></span>
               </div>
@@ -336,8 +337,8 @@ try {
 			<div class="span-3-10">
 			   <ul class="actions">
 			   
-											<li> <button class="small primary color4" type="submit">Save</button> </li>
-											<li><a href="index.php" class="button small primary color4">Home</a></li>
+											<li> <button class="small primary color4" type="submit"><?php echo $text[$lang]['bt_save']?></button> </li>
+											<li><a href="index.php" class="button small primary color4"><?php echo $text[$lang]['bt_home']?></a></li>
 										</ul>
 										   </div>	
 
@@ -358,7 +359,7 @@ try {
 						<div class="intro color4">
 						
 						<div class="field third">
-													<label for="demo-category">Language</label>
+													<label for="demo-category"><?php echo $text[$lang]['lb_primary_emotion']?></label>
 													<div class="select-wrapper">
 														<select name="demo-category" id="demo-category">
 															<option value="">-</option>
@@ -370,7 +371,7 @@ try {
 													</div>
 												</div>
 						<div class="field third">
-													<label for="demo-category">Primary Emotion</label>
+													<label for="demo-category"><?php echo $text[$lang]['lb_secondary_emotion']?></label>
 													<div class="select-wrapper">
 														<select name="demo-category" id="demo-category">
 															<option value="">-</option>
@@ -382,7 +383,7 @@ try {
 													</div>
 												</div>	
 <div class="field third">
-	<label for="demo-category">Secondary Emotion</label>
+	<label for="demo-category"><?php echo $text[$lang]['lb_tertianry_emotion']?></label>
 													<div class="select-wrapper">
 														<select name="demo-category" id="demo-category">
 															<option value="">-</option>

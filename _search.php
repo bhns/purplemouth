@@ -66,9 +66,9 @@ try {
 
     <div class="panel panel-primary">
       <div class="intro color4">
-	  <a href="index.php" class="button small primary color4">home</a><br>
+	  <a href="index.php" class="button small primary color4"><?php echo $text[$lang]['bt_home']?></a><br>
 			    <?php if (count($results) > 0) { ?>
-				<h4>Purple Mouth</h4>
+				<h4><?php echo $text[$lang]['bt_search']?></h4>
 																		<?php if ($ERROR_MSG <> "") { ?>
     <div id="wrapper<?php echo $ERROR_TYPE ?>">
      <!-- <button data-dismiss="alert" class="close" type="button">×</button>-->
@@ -85,9 +85,9 @@ try {
               <input type="text" value="<?php echo $_GET["keyword"]; ?>" placeholder="Search by word name" id="" class="form-control" name="keyword" style="height: 41px;">
             </label>
             </span>
-            <button class="button small">Search</button>
-			<a href="_edit_word.php" class="button small">Add New Word</a><br><br>
-			<p>Total Records : <?php echo $total_count; ?><br>
+            <button class="button small"><?php echo $text[$lang]['bt_search']?></button>
+			<a href="_edit_word.php" class="button small"><?php echo $text[$lang]['bt_add_new_word']?></a><br><br>
+			<p><?php echo $text[$lang]['lb_records']?> : <?php echo $total_count; ?><br>
 			<div class="copyright">&copy;lebestation</div>
 			<a href="http://bhns.com.br">BHNS</a>
 
@@ -102,10 +102,10 @@ try {
 			<table  class="alt">
 												<thead>
 													<tr>
-													   <th>Word</th>
-				                                      <th>Category</th>
-                                                      <th>Translate</th>
-				                                      <th>Picture</th>
+													  <th><?php echo $text[$lang]['lb_word']?></th>
+				                                      <th><?php echo $text[$lang]['lb_category']?></th>
+                                                      <th><?php echo $text[$lang]['lb_translate']?></th>
+				                                      <th><?php echo $text[$lang]['lb_picture']?></th>
 													</tr>
 												</thead>
 												<tbody>
@@ -121,10 +121,10 @@ try {
 
                 </tr>
 				 <tr>
-				 <td><a href="_words.php?cid=<?php echo $res["word_id"]; ?>" class="button small">View</a></td>
-				  <td><a href="_edit_word.php?m=update&cid=<?php echo $res["word_id"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" class="button small">Edit</a></td>
-				   <td><a href="_edit_word.php?m=update&cid=<?php echo $res["word_id"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" class="button small">Copy</a></td>
-				  <td><a href="_main_.php?mode=delete&cid=<?php echo $res["word_id"]; ?>&keyword=<?php echo $_GET["keyword"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" onclick="return confirm('Are you sure?')" class="button small">Delete</a> </td>
+				 <td><a href="_words.php?cid=<?php echo $res["word_id"]; ?>" class="button small"><?php echo $text[$lang]['bt_view']?></a></td>
+				  <td><a href="_edit_word.php?m=update&cid=<?php echo $res["word_id"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" class="button small"><?php echo $text[$lang]['bt_edit']?></a></td>
+				   <td><a href="_edit_word.php?m=update&cid=<?php echo $res["word_id"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" class="button small"><?php echo $text[$lang]['bt_copy']?></a></td>
+				  <td><a href="_main_.php?mode=delete&cid=<?php echo $res["word_id"]; ?>&keyword=<?php echo $_GET["keyword"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" onclick="return confirm('Are you sure?')" class="button small"><?php echo $text[$lang]['bt_delete']?></a> </td>
 				  </tr>
 
 				 <?php } ?>
