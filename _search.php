@@ -82,7 +82,7 @@ try {
           <span class="pull-left">
 		  <!--Botoes pesquisar e adiconar-->
             <label class="col-lg-12 control-label" for="keyword" style="padding-right: 0;">
-              <input type="text" value="<?php echo $_GET["keyword"]; ?>" placeholder="Search by word name" id="" class="form-control" name="keyword" style="height: 41px;">
+              <input type="text" value="<?php echo $_GET["keyword"]; ?>" placeholder="<?php echo $text[$lang]['lb_tips']; ?>" id="" class="form-control" name="keyword" style="height: 41px;">
             </label>
             </span>
             <button class="button small"><?php echo $text[$lang]['bt_search']?></button>
