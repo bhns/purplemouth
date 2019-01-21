@@ -35,8 +35,6 @@ SASS + CSS
 //https://html5up.net/
 //*********************************************************************************************
 
-6784 = 9433  2649   info@northek
-
 I am going to work in translation for this Portuguese is my mothertangon and main but like english and last time coming study French and Russian. You are free for comment and help this if you want, with the Code, Translate...
 
 SELECT * FROM `main_words` ORDER BY `main_words`.`word_name` ASC
