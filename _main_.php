@@ -1,22 +1,63 @@
 <?php
     /* 
  * You are free for make it better @author everyone that love shared
+ $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+fwrite($myfile, $_POST['word_name']&"\n");
+fwrite($myfile, $_POST['lan_name']&"\n");
+fwrite($myfile, $word_ref&"\n");
+fwrite($myfile, $category_word&"\n");
+fwrite($myfile, $pronunciation&"\n");
+fwrite($myfile, $type_name&"\n");
+fwrite($myfile, $email_address&"\n");
+fwrite($myfile, $frequen_&"\n");
+fwrite($myfile, $notes&"\n");
+fwrite($myfile, $f_emotion&"\n");
+fwrite($myfile, $sf_emotion&"\n");
+fwrite($myfile, $ssf_emotion&"\n");
+fwrite($myfile, $user_code1&"\n");
+fwrite($myfile, $user_code2&"\n");
+fwrite($myfile, $user_code3&"\n");
+fwrite($myfile, $user_code4&"\n");
+fwrite($myfile, $user_code5&"\n");
+fwrite($myfile, $user_code6&"\n");
+fwrite($myfile, $user_code7&"\n");
+fwrite($myfile, $user_code8&"\n");
+fwrite($myfile, $user_code9&"\n");
+fclose($myfile);
+ 
  
  */
 require './_config.php';
+
+
+
 $mode = $_REQUEST["mode"];
+
 if ($mode == "add_new" ) {
   $word_name = trim($_POST['word_name']);
+
   $lan_name = trim($_POST['lan_name']);
+
+  $word_ref = trim($_POST['word_ref']);
+
   $category_word = trim($_POST['category_word']);
+
   $pronunciation = trim($_POST['pronunciation']);
+
   $type_name = trim($_POST['type_name']);
-  $email_id = trim($_POST['email_id']);
+
   $color_ = trim($_POST['color_']);
+ 
   $frequen_ = trim($_POST['frequen_']);
+
   $notes = trim($_POST['notes']);
+
+  $email_address = trim($_POST['email_address']);
+
   $f_emotion = trim($_POST['f_emotion']);
+
   $sf_emotion = trim($_POST['sf_emotion']);
+
   $ssf_emotion = trim($_POST['ssf_emotion']);
   $user_code1 = trim($_POST['user_code1']);
   $user_code2 = trim($_POST['user_code2']);
@@ -41,27 +82,27 @@ if ($mode == "add_new" ) {
     }
   }
    $word_sound = trim($_POST['word_sound']);
-   
+
 
  if (!$error) {
-    $sql = "INSERT INTO `main_words` (`word_name, `lan_name`, `category_word`, `type_name`, `pronunciation`, `notes`, `color_`, `frequen_`, `email_address`, `f_emotion`, `sf_emotion`, `ssf_emotion`, `user_code1`, `user_code2`, `user_code3`, `user_code4`, `user_code5`, `user_code6`, `user_code7`, `user_code8`, `user_code9`, `polarity`, `cust_power`, `key_word`, `updated`, `word_pic`, `word_sound`) VALUES "
-            . "( :wname, :lname, :cname, :tname, :pronunciation, :notes, :color_, :frequen_, :email, :f_emo, :sf_emo, :ssf_emo, :user_c1, :user_c2, :user_c3, :user_c4, :user_c5, :user_c6, :user_c7, :user_c8, :user_c9, :po_la_ri_ty, :cust_t, :key_pass, :last_up, :pic, :sound)";
-
-
+    $sql = "INSERT INTO `main_words` (`word_name`, `lan_name`, `word_ref`, `category_word`, `type_name`, `pronunciation`, `notes`, `color_`, `frequen_`, `email_address`, `f_emotion`, `sf_emotion`, `ssf_emotion`, `user_code1`, `user_code2`, `user_code3`, `user_code4`, `user_code5`, `user_code6`, `user_code7`, `user_code8`, `user_code9`, `polarity`, `cust_power`, `key_word`, `updated`, `word_pic`, `word_sound`) VALUES "
+            . "( :wname, :lname, :wref, :cname, :tname, :pronunciation, :notes, :color_, :frequen_, :email, :f_emo, :sf_emo, :ssf_emo, :user_c1, :user_c2, :user_c3, :user_c4, :user_c5, :user_c6, :user_c7, :user_c8, :user_c9, :po_la_ri_ty, :cust_t, :key_pass, :last_up, :pic, :sound)";
+  
 
     try {
       $check_ = $DB->prepare($sql);
-
+  
       // bind the values
      $check_->bindValue(":wname", $word_name);
 	 $check_->bindValue("lname", $lan_name);
+	 $check_->bindValue("wref", $word_ref);
      $check_->bindValue(":cname", $category_word);
 	 $check_->bindValue(":tname", $type_name);
 	 $check_->bindValue(":pronunciation", $pronunciation);
      $check_->bindValue(":notes", $notes);
      $check_->bindValue(":color_", $color_);
      $check_->bindValue(":frequen_", $frequen_);
-     $check_->bindValue(":email", $email_id);
+     $check_->bindValue(":email", $email_address);
 	 $check_->bindValue(":f_emo", $f_emotion); 
 	 $check_->bindValue(":sf_emo", $sf_emotion);
 	 $check_->bindValue(":ssf_emo", $ssf_emotion);
@@ -84,6 +125,7 @@ if ($mode == "add_new" ) {
       // execute Query
       $check_->execute();
       $result = $check_->rowCount();
+	 
       if ($result > 0) {
         $_SESSION["errorType"] = "success";
         $_SESSION["errorMsg"] = "Word added successfully.";
@@ -106,13 +148,14 @@ if ($mode == "add_new" ) {
 
   $word_name = trim($_POST['word_name']);
   $lan_name = trim($_POST['lan_name']);
+  $word_ref = trim($_POST['word_ref']);
   $category_word = trim($_POST['category_word']);
   $type_name = trim($_POST['type_name']);
   $pronunciation = trim($_POST['pronunciation']);
   $notes = trim($_POST['notes']);
   $color_ = trim($_POST['color_']);
   $frequen_ = trim($_POST['frequen_']);
-  $email_id = trim($_POST['email_id']);
+  $email_address = trim($_POST['email_address']);
   $f_emotion = trim($_POST['f_emotion']);
   $sf_emotion = trim($_POST['sf_emotion']);
   $ssf_emotion = trim($_POST['ssf_emotion']);
@@ -144,10 +187,12 @@ if ($mode == "add_new" ) {
   }
 
   $word_sound = trim($_POST['word_sound']);
+  
+  
 
 
   if (!$error) {
-    $sql = "UPDATE `main_words` SET `word_name` = :wname, `lan_name` = :lname, `category_word` = :cname, `type_name` = :tname, `pronunciation` = :pronunciation, `notes` = :notes, `color_` = :color_, `frequen_` = :frequen_, `email_address` = :email, `f_emotion` = :f_emo, `sf_emotion` = :sf_emo, `ssf_emotion` = :ssf_emo, `user_code1` = :user_c1, `user_code2` = :user_c2, `user_code3` = :user_c3, `user_code4` = :user_c4, `user_code5` = :user_c5, `user_code6` = :user_c6, `user_code7` = :user_c7, `user_code8` = :user_c8, `user_code9` = :user_c9, `polarity` = :po_la_ri_ty, `cust_power` = :cust_t, `key_word` = :key_pass, `updated` = :last_up, `word_pic` = :pic, `word_sound` = :sound  "
+    $sql = "UPDATE `main_words` SET `word_name` = :wname, `lan_name` = :lname, `word_ref` = :wref, `category_word` = :cname, `type_name` = :tname, `pronunciation` = :pronunciation, `notes` = :notes, `color_` = :color_, `frequen_` = :frequen_, `email_address` = :email, `f_emotion` = :f_emo, `sf_emotion` = :sf_emo, `ssf_emotion` = :ssf_emo, `user_code1` = :user_c1, `user_code2` = :user_c2, `user_code3` = :user_c3, `user_code4` = :user_c4, `user_code5` = :user_c5, `user_code6` = :user_c6, `user_code7` = :user_c7, `user_code8` = :user_c8, `user_code9` = :user_c9, `polarity` = :po_la_ri_ty, `cust_power` = :cust_t, `key_word` = :key_pass, `updated` = :last_up, `word_pic` = :pic, `word_sound` = :sound  "
             . "WHERE word_id = :cid ";
 
     try {
@@ -159,13 +204,14 @@ if ($mode == "add_new" ) {
       // bind the values
       $check_->bindValue(":wname", $word_name);
 	  $check_->bindValue("lname", $lan_name);
+	  $check_->bindValue("wref", $word_ref);
       $check_->bindValue(":cname", $category_word);
 	  $check_->bindValue(":tname", $type_name);
 	  $check_->bindValue(":pronunciation", $pronunciation);
       $check_->bindValue(":notes", $notes);
       $check_->bindValue(":color_", $color_);
       $check_->bindValue(":frequen_", $frequen_);
-      $check_->bindValue(":email", $email_id);
+      $check_->bindValue(":email", $email_address);
 	   $check_->bindValue(":f_emo", $f_emotion); 
 	   $check_->bindValue(":sf_emo", $sf_emotion);
 	   $check_->bindValue(":ssf_emo", $ssf_emotion);
@@ -234,4 +280,6 @@ if ($mode == "add_new" ) {
    
    header("location:index.php?pagenum=".$_GET['pagenum']);
 }
+
+
 ?>

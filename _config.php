@@ -24,6 +24,20 @@ session_start();
 	   setcookie ( 'language', $lang, time() + 60*60*24*30, '/','localhost');
 	   
     }
+	
+	$lang_ = "en";
+	if( isset( $_COOKIE["classes"] ) ) { 
+       $lang_ = $_COOKIE["classes"]; 
+    }
+
+    if( isset( $_POST["lang_"] ) ) {
+       $lang_ = $_POST["lang_"];
+       $refresh = $_SERVER['PHP_SELF'];
+       header( "Location: $refresh");
+	   setcookie ( 'classes', $lang_, time() + 60*60*24*30, '/','localhost');
+	   
+    }
+	
 include './languages.php';
 
 /*****************Fim Cookies*****************/

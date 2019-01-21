@@ -129,9 +129,9 @@ try {
             <div class="field half">
 
 			      <div class="span-3-5">
-              <label for="email_id"><span class="required">*</span>update by user :</label>
+              <label for="email_address"><span class="required">*</span>update by user :</label>
               <div class="span-3-5">
-                <input type="text" readonly="" value="<?php echo $results[0]["email_address"] ?>" placeholder="User or email" id="email_id" class="color3" name="email_id"><span id="email_id_err" class="error"></span>
+                <input type="text" readonly="" value="<?php echo $results[0]["email_address"] ?>" placeholder="User or email" id="email_address" class="color3" name="email_address"><span id="email_address_err" class="error"></span>
               </div>
             </div>
 			<div class="field half">

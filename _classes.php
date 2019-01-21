@@ -5,13 +5,17 @@
  */
 require_once './_config.php';
 include './_header.php';
+error_reporting(E_ERROR);
+
+
+
 /*******PAGINATION CODE STARTS*****************/
 if (!(isset($_GET['pagenum']))) {
   $pagenum = 1;
 } else {
   $pagenum = $_GET['pagenum'];
 }
-$page_limit = ($_GET["show"] <> "" && is_numeric($_GET["show"]) ) ? $_GET["show"] : 10;
+$page_limit = ($_GET["show"] <> "" && is_numeric($_GET["show"]) ) ? $_GET["show"] :2;
 
 
 try {
@@ -20,14 +24,14 @@ try {
     $sql = "SELECT * FROM main_words WHERE 1 AND "
             . " (word_name LIKE :keyword) ORDER BY word_name ";
     $check_ = $DB->prepare($sql);
-    
+
     $check_->bindValue(":keyword", $keyword."%");
-    
+
   } else {
     $sql = "SELECT * FROM main_words WHERE 1 ORDER BY word_name ";
     $check_ = $DB->prepare($sql);
   }
-  
+
   $check_->execute();
   $total_count = count($check_->fetchAll());
 
@@ -44,13 +48,13 @@ try {
 
 
   $sql2 = $sql . " limit " . ($lower_limit) . " ,  " . ($page_limit) . " ";
-  
+
   $check_ = $DB->prepare($sql2);
-  
+
   if ($keyword <> "" ) {
     $check_->bindValue(":keyword", $keyword."%");
    }
-   
+
   $check_->execute();
   $results = $check_->fetchAll();
 } catch (Exception $ex) {
@@ -61,14 +65,17 @@ try {
 
 
 
+
 <!-- Panel -->
 <section class="panel color4-alt" id="view_word">
 
     <div class="panel panel-primary">
       <div class="intro color4">
-	  <a href="index.php" class="button small primary color4"><?php echo $text[$lang]['bt_home']?></a><br>
+	  
+			<br>
+	  <a href="index.php" class="button small primary color4"><?php echo $text[$lang]['bt_home']; ?></a><br>
 			    <?php if (count($results) > 0) { ?>
-				<h4><?php echo $text[$lang]['bt_search']?></h4>
+				<h4><?php echo $text[$lang]['title_home']; ?></h4>
 																		<?php if ($ERROR_MSG <> "") { ?>
     <div id="wrapper<?php echo $ERROR_TYPE ?>">
      <!-- <button data-dismiss="alert" class="close" type="button">×</button>-->
@@ -85,11 +92,13 @@ try {
               <input type="text" value="<?php echo $_GET["keyword"]; ?>" placeholder="<?php echo $text[$lang]['lb_tips']; ?>" id="" class="form-control" name="keyword" style="height: 41px;">
             </label>
             </span>
-            <button class="button small"><?php echo $text[$lang]['bt_search']?></button>
-			<a href="_edit_word.php" class="button small"><?php echo $text[$lang]['bt_add_new_word']?></a><br><br>
-			<p><?php echo $text[$lang]['lb_records']?> : <?php echo $total_count; ?><br>
+            <button class="button small"><?php echo $text[$lang]['bt_search']; ?></button>
+			<a href="_edit_word.php" class="button small"><?php echo $text[$lang]['bt_add_new_word']; ?></a><br>
+			<p><?php echo $text[$lang]['lb_records']; ?> : <?php echo $total_count; ?></p>  
 			<div class="copyright">&copy;lebestation</div>
 			<a href="http://bhns.com.br">BHNS</a>
+			<!-- <?php echo $last_consult_sql; ?><br> 
+			 <?php echo $sql ; ?><br> -->
             </form>
 
  	    </div>
@@ -98,46 +107,52 @@ try {
 
 		 <div class="class=inner columns divided">
 
-			<div class="span-3-25">
-			<table  class="alt">
+			<div class="span-3-25"><br>   <br>   
+				<h2 class="major"><?php echo $text[$lang]['bt_class']; ?></h2>
+                <p><?php echo $text[$lang]['text_home']; ?></p>				
+		        <button title="<?php echo $text[$lang]['lb_number_1']; ?>" alt="<?php echo $text[$lang]['lb_number_1']; ?>"class="button small"><?php echo $text[$lang_]['lb_number_1']; ?></button>
+			
+			
+			
+			
+			
+			<!--<table  class="alt">
 												<thead>
 													<tr>
-													  <th><?php echo $text[$lang]['lb_word']?></th>
-				                                      <th><?php echo $text[$lang]['lb_category']?></th>
-                                                      <th><?php echo $text[$lang]['lb_translate']?></th>
-				                                      <th><?php echo $text[$lang]['lb_picture']?></th>
+													   <th>Praticar</th>
+				                                      <th>Category</th>
+                                                      <th>Translate</th>
+				                                      <th>Picture</th>
 													</tr>
 												</thead>
 												<tbody>
- <?php foreach ($results as $res) { ?>
+
                 <tr>
 				  <td><h4> <?php echo $res["word_name"]; ?></h4></td>
 				  <td><?php echo $res["category_word"]; ?></td>
                   <td><?php echo $res["type_name"]; ?></td>
-                  <!--<td><?php echo $res["email_address"]; ?></td>-->
+              <?php echo $res["email_address"]; ?></td>
 				  <td>
                 <?php $pic = ($res["word_pic"] <> "" ) ? $res["word_pic"] : "no_pic.png" ?>
                     <a href="word_pics/<?php echo $pic ?>" target="_blank"><img src="word_pics/<?php echo $pic ?>" alt="" width="50" height="50" ></a> </td>
 
                 </tr>
 				 <tr>
-				 <td><a href="_words.php?cid=<?php echo $res["word_id"]; ?>" class="button small"><?php echo $text[$lang]['bt_view']?></a></td>
-				  <td><a href="_edit_word.php?m=update&cid=<?php echo $res["word_id"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" class="button small"><?php echo $text[$lang]['bt_edit']?></a></td>
-				   <td><a href="_edit_word.php?m=update&cid=<?php echo $res["word_id"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" class="button small"><?php echo $text[$lang]['bt_copy']?></a></td>
-				  <td><a href="_main_.php?mode=delete&cid=<?php echo $res["word_id"]; ?>&keyword=<?php echo $_GET["keyword"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" onclick="return confirm('Are you sure?')" class="button small"><?php echo $text[$lang]['bt_delete']?></a> </td>
+				 <td><a href="_words.php?cid=<?php echo $res["word_id"]; ?>" class="button small">View</a></td>
+				  <td><a href="_edit_word.php?m=update&cid=<?php echo $res["word_id"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" class="button small">Edit</a></td>
+				  <td><a href="_main_.php?mode=delete&cid=<?php echo $res["word_id"]; ?>&keyword=<?php echo $_GET["keyword"]; ?>&pagenum=<?php echo $_GET["pagenum"]; ?>" onclick="return confirm('Are you sure?')" class="button small">Delete</a> </td>
 				  </tr>
 
-				 <?php } ?>
 												</tbody>
 												<tfoot>
 
 
-													<!--<tr>
+													<tr>
 														<td colspan="2"></td>
-														<td>100.00</td>-->
+														<td>100.00</td>
 													</tr>
 												</tfoot>
-											</table>
+											</table>-->
 	                                </div>
 									
 						
@@ -151,18 +166,21 @@ try {
 						
 						
 						<div class="intro color4">
-										<ul class="contact-icons color1">
-											<li class="icon fa-twitter"><a href="#">@untitled-tld</a></li>
-											<li class="icon fa-facebook"><a href="#">facebook.com/untitled</a></li>
-											<li class="icon fa-snapchat-ghost"><a href="#">@untitled-tld</a></li>
-											<li class="icon fa-instagram"><a href="#">@untitled-tld</a></li>
-											<li class="icon fa-medium"><a href="#">medium.com/untitled</a></li>
+						       <div class="span-1-5">
+										<ul class="icons">
+											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+											<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
 										</ul>
+									</div>
+									<p><?php echo $text[$lang]['filename'] . $_SERVER['PHP_SELF']; ?></p>
 									</div>
 									
 
     </div>
-  
+
 </section>
 
           <?php } else { ?>

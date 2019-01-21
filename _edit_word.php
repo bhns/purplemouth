@@ -26,10 +26,10 @@ try {
         <h3 class="panel-title"><?php echo ($_GET["m"] == "update") ? "Edit" : "Add"; ?> <?php echo $text[$lang]['lb_new_word']?></h3>
 		
 		  <form class="form-horizontal" name="contact_form" id="contact_form" enctype="multipart/form-data" method="post" action="_main_.php">
-          <input type="hidden" name="mode" value="<?php echo ($_GET["m"] == "update") ? "update_old" : "add_new"; ?>" >
-          <input type="hidden" name="old_pic" value="<?php echo $results[0]["word_pic"] ?>" >
-          <input type="hidden" name="cid" value="<?php echo intval($results[0]["word_id"]); ?>" >
-          <input type="hidden" name="pagenum" value="<?php echo $_GET["pagenum"]; ?>" >
+          <input type="text" name="mode" value="<?php echo ($_GET["m"] == "update") ? "update_old" : "add_new"; ?>" >
+          <input type="text" name="old_pic" value="<?php echo $results[0]["word_pic"] ?>" >
+          <input type="text" name="cid" value="<?php echo intval($results[0]["word_id"]); ?>" >
+          <input type="text" name="pagenum" value="<?php echo $_GET["pagenum"]; ?>" >
           <fieldset>
             <div class="field half">
               <label for="word_name"><span class="required">*</span> <?php echo $text[$lang]['lb_word']?>:</label>
@@ -37,8 +37,126 @@ try {
                 <input type="text" value="<?php echo $results[0]["word_name"] ?>" placeholder="First Name" id="word_name" class="color2" name="word_name"><span id="word_name_err" class="error"></span>
               </div>
             </div>
+                  <div class="field half">
+              <label for="lan_name"><span class="required">*</span> <?php echo $text[$lang]['lb_word']?>:</label>
+              <div class="span-3-10">
+                <input type="text" value="<?php echo $results[0]["lan_name"] ?>" placeholder="First Name" id="lan_name" class="color2" name="lan_name"><span id="word_name_err" class="error"></span>
+              </div>
+            </div>
+			       <div class="field half">
+              <label for="word_ref"><span class="required">*</span> <?php echo $text[$lang]['lb_word']?>:</label>
+              <div class="span-3-10">
+                <input type="text" value="<?php echo $results[0]["word_ref"] ?>" placeholder="First Name" id="word_ref" class="color2" name="word_ref"><span id="word_name_err" class="error"></span>
+              </div>
+            </div>
+            
+            <div class="field half">
+              <label for="category_word"><?php echo $text[$lang]['lb_category']?>:</label>
+              <div class="span-3-10">
+                <input type="text" value="<?php echo $results[0]["category_word"] ?>" placeholder="Category" id="category_word" class="color2" name="category_word">
+              </div>
+            </div>
 			
-									<div class="field third">
+			        <div class="field half">
+              <label for="pronunciation"><?php echo $text[$lang]['lb_pronunciation']?>:</label>
+              <div class="span-3-10">
+                <input type="text" value="<?php echo $results[0]["pronunciation"] ?>" placeholder="Speaking" id="pronunciation" class="color2" name="pronunciation">
+              </div>
+            </div>
+			
+			
+            <div class="field half">
+              <label for="type_name"><span class="required">*</span><?php echo $text[$lang]['lb_empty_']?></label>
+              <div class="span-3-10">
+                <input type="text" value="<?php echo $results[0]["type_name"] ?>" placeholder="Empty" id="type_name" class="color2" name="type_name"><span id="type_name_err" class="error"></span>
+              </div>
+            </div>
+            
+        
+            
+            <div class="field half">
+              <label for="color_"><span class="required">*</span><?php echo $text[$lang]['lb_empty_1']?>:</label>
+              <div class="span-3-10">
+                <input type="text" value="<?php echo $results[0]["color_"] ?>" placeholder="Empty" id="color_" class="color2" name="color_"><span id="color__err" class="error"></span>
+               <!-- <span class="help-block">Maximum of 10 digits only and only numbers.</span>-->
+              </div>
+            </div>
+            
+            <div class="field half">
+              <label for="frequen_"><?php echo $text[$lang]['lb_empty_2']?>:</label>
+              <div class="span-3-10">
+                <input type="text" value="<?php echo $results[0]["frequen_"] ?>" placeholder="Empty" id="frequen_" class="color2" name="frequen_"><span id="frequen__err" class="error"></span>
+                <!--<span class="help-block">Maximum of 10 digits only and only numbers.</span>-->
+              </div>
+            </div>
+</div>          
+           <div class="class=inner columns divided">
+		   
+		       <?php if ($_GET["m"] == "update") { ?>
+            <div class="field half">
+              <div class="span-3-10">
+                <?php $pic = ($results[0]["word_pic"] <> "" ) ? $results[0]["word_pic"] : "no_pic.png" ?>
+                <a href="word_pics/<?php echo $pic ?>" target="_blank"><img src="word_pics/<?php echo $pic ?>" alt="" width="100" height="100" class="thumbnail" ></a>
+              </div>
+            </div>
+            <?php 
+            }
+            ?>
+		   <div class="span-3-10">
+            <div>
+              <label for="word_pic"><?php echo $text[$lang]['lb_picture']?>:</label>
+              <div class="span-3-10">
+                <input type="file"  id="word_pic" class="form-control file" name="word_pic"><span id="word_pic_err" class="error"></span>
+                <span class="help-block">Must me jpg, jpeg, png, gif, bmp image only.</span>
+              </div>
+            </div>
+			</div>
+            
+        
+            
+            
+            <div class="fields">
+            <div class="field">
+              <label for="notes"><?php echo $text[$lang]['lb_notes']?>:</label>
+              <div class="span-3-10">
+                <textarea id="notes" name="notes" rows="3" class="color2"><?php echo $results[0]["notes"] ?></textarea>
+              </div>
+            </div>
+            
+            <div class="field half">
+
+			      <div class="span-3-5">
+              <label for="email_address"><span class="required">*</span><?php echo $text[$lang]['lb_user']?> :</label>
+              <div class="span-3-5">
+                <input type="text" value="<?php echo $results[0]["email_address"] ?>" placeholder="User or email" id="email_address" class="color3" name="email_address"><span id="email_address_err" class="error"></span>
+              </div>
+            </div>
+			<div class="span-3-10">
+			   <ul class="actions">
+			   
+											<li> <button class="small primary color4" type="submit"><?php echo $text[$lang]['bt_save']?></button> </li>
+											<li><a href="index.php" class="button small primary color4"><?php echo $text[$lang]['bt_home']?></a></li>
+										</ul>
+										   </div>	
+</form>
+		
+
+      </div>
+	  
+	 
+      </div>
+	  
+
+
+	  
+    </div>
+	
+	
+				
+						<div class="intro color4">
+						
+						
+						<div class="field third">
 													<label for="demo-category"><?php echo $text[$lang]['lingua_name']?></label>
 													<div class="select-wrapper">
 														<select name="demo-category" id="demo-category">
@@ -251,112 +369,9 @@ try {
 														</select>
 													</div>
 												</div>
-			
-            
-            <div class="field half">
-              <label for="category_word"><?php echo $text[$lang]['lb_category']?>:</label>
-              <div class="span-3-10">
-                <input type="text" value="<?php echo $results[0]["category_word"] ?>" placeholder="Category" id="category_word" class="color2" name="category_word">
-              </div>
-            </div>
-			
-			        <div class="field half">
-              <label for="pronunciation"><?php echo $text[$lang]['lb_pronunciation']?>:</label>
-              <div class="span-3-10">
-                <input type="text" value="<?php echo $results[0]["pronunciation"] ?>" placeholder="Speaking" id="pronunciation" class="color2" name="pronunciation">
-              </div>
-            </div>
-			
-			
-            <div class="field half">
-              <label for="type_name"><span class="required">*</span><?php echo $text[$lang]['lb_empty_']?></label>
-              <div class="span-3-10">
-                <input type="text" value="<?php echo $results[0]["type_name"] ?>" placeholder="Empty" id="type_name" class="color2" name="type_name"><span id="type_name_err" class="error"></span>
-              </div>
-            </div>
-            
-        
-            
-            <div class="field half">
-              <label for="color_"><span class="required">*</span><?php echo $text[$lang]['lb_empty_1']?>:</label>
-              <div class="span-3-10">
-                <input type="text" value="<?php echo $results[0]["color_"] ?>" placeholder="Empty" id="color_" class="color2" name="color_"><span id="color__err" class="error"></span>
-               <!-- <span class="help-block">Maximum of 10 digits only and only numbers.</span>-->
-              </div>
-            </div>
-            
-            <div class="field half">
-              <label for="frequen_"><?php echo $text[$lang]['lb_empty_2']?>:</label>
-              <div class="span-3-10">
-                <input type="text" value="<?php echo $results[0]["frequen_"] ?>" placeholder="Empty" id="frequen_" class="color2" name="frequen_"><span id="frequen__err" class="error"></span>
-                <!--<span class="help-block">Maximum of 10 digits only and only numbers.</span>-->
-              </div>
-            </div>
-</div>          
-           <div class="class=inner columns divided">
-		   
-		       <?php if ($_GET["m"] == "update") { ?>
-            <div class="field half">
-              <div class="span-3-10">
-                <?php $pic = ($results[0]["word_pic"] <> "" ) ? $results[0]["word_pic"] : "no_pic.png" ?>
-                <a href="word_pics/<?php echo $pic ?>" target="_blank"><img src="word_pics/<?php echo $pic ?>" alt="" width="100" height="100" class="thumbnail" ></a>
-              </div>
-            </div>
-            <?php 
-            }
-            ?>
-		   <div class="span-3-10">
-            <div>
-              <label for="word_pic"><?php echo $text[$lang]['lb_picture']?>:</label>
-              <div class="span-3-10">
-                <input type="file"  id="word_pic" class="form-control file" name="word_pic"><span id="word_pic_err" class="error"></span>
-                <span class="help-block">Must me jpg, jpeg, png, gif, bmp image only.</span>
-              </div>
-            </div>
-			</div>
-            
-        
-            
-            
-            <div class="fields">
-            <div class="field">
-              <label for="notes"><?php echo $text[$lang]['lb_notes']?>:</label>
-              <div class="span-3-10">
-                <textarea id="notes" name="notes" rows="3" class="color2"><?php echo $results[0]["notes"] ?></textarea>
-              </div>
-            </div>
-            
-            <div class="field half">
-
-			      <div class="span-3-5">
-              <label for="email_id"><span class="required">*</span><?php echo $text[$lang]['lb_user']?> :</label>
-              <div class="span-3-5">
-                <input type="text" value="<?php echo $results[0]["email_address"] ?>" placeholder="User or email" id="email_id" class="color3" name="email_id"><span id="email_id_err" class="error"></span>
-              </div>
-            </div>
-			<div class="span-3-10">
-			   <ul class="actions">
-			   
-											<li> <button class="small primary color4" type="submit"><?php echo $text[$lang]['bt_save']?></button> </li>
-											<li><a href="index.php" class="button small primary color4"><?php echo $text[$lang]['bt_home']?></a></li>
-										</ul>
-										   </div>	
-
-		
-
-      </div>
-	  
-	 
-      </div>
-	  
-
-
-	  
-    </div>
-	
-	
-				
-						<div class="intro color4">
+						
+						
+						
 						
 						<div class="field third">
 													<label for="demo-category"><?php echo $text[$lang]['lb_primary_emotion']?></label>
@@ -415,6 +430,7 @@ try {
 											<li class="icon fa-medium"><a href="#">medium.com/untitled</a></li>
 										</ul>-->
 									</div>
+									 
 	
   </div>
  </section> 
@@ -444,7 +460,7 @@ function validateForm() {
 	 
 	 var word_name = $.trim( $("#word_name").val());
      var type_name = $.trim( $("#type_name").val());
-	 var email_id = $.trim( $("#email_id").val());
+	 var email_address = $.trim( $("#email_address").val());
 	 var color_ = $.trim( $("#color_").val());
 	 var frequen_ = $.trim( $("#frequen_").val());
      
@@ -472,9 +488,9 @@ function validateForm() {
 	}
 
     
-    if (!isValidEmail(email_id)) {
-		$("#email_id_err").html("Enter valid email.");
-		$('#email_id_err').fadeIn("fast"); 
+    if (!isValidEmail(email_address)) {
+		$("#email_address_err").html("Enter valid email.");
+		$('#email_address_err').fadeIn("fast"); 
 		errCnt++;
 	}
     
