@@ -60,10 +60,44 @@ try {
 } catch (Exception $ex) {
   echo $ex->getMessage();
 }
-/*******PAGINATION CODE ENDS*****************/
+/*******PAGINATION CODE ENDS*****************/ 
 ?>
 
-
+<script src="assets/js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+   $("#show_class_text_1").hide();
+  $("#show_class_1").click(function(){
+    $("#show_class_text_1").show(500);
+    $("#show_class_text_1").hide(5000);
+  });	
+	
+  $("#show_text_1").hide();
+  $("#show_1").click(function(){
+    $("#show_text_1").show();
+    $("#show_text_1").hide(4000);
+  });
+  
+    $("#show_text_2").hide();
+  $("#show_2").click(function(){
+    $("#show_text_2").show();
+    $("#show_text_2").hide(4000);
+  });
+  
+    $("#show_text_3").hide();
+  $("#show_3").click(function(){
+    $("#show_text_3").show();
+    $("#show_text_3").hide(4000);
+  });
+  
+    $("#show_text_4").hide();
+  $("#show_4").click(function(){
+    $("#show_text_4").show();
+    $("#show_text_4").hide(4000);
+  });
+});
+</script>
 
 
 <!-- Panel -->
@@ -108,10 +142,59 @@ try {
 		 <div class="class=inner columns divided">
 
 			<div class="span-3-25"><br>   <br>   
-				<h2 class="major"><?php echo $text[$lang]['bt_class']; ?></h2>
-                <p><?php echo $text[$lang]['text_home']; ?></p>				
-		        <button title="<?php echo $text[$lang]['lb_number_1']; ?>" alt="<?php echo $text[$lang]['lb_number_1']; ?>"class="button small"><?php echo $text[$lang_]['lb_number_1']; ?></button>
-			
+				<h2 class="major"><?php echo $text[$lang]['bt_class']; ?>  <?php echo $text[$lang]['lingua']; ?> <?php echo $text[$lang_]['lingua_name']?>.</h2>
+                <p><?php echo $text[$lang]['text_home']; ?></p>
+				<button id="show_class_1" class="button small"><?php echo $text[$lang]['bt_help']; ?></button>
+				
+				<p id="show_class_text_1"><?php echo $text[$lang]['text_classes_1']; ?></p>
+                <table>				
+				<tr>
+                <th id="show_text_1" ><?php echo $text[$lang]['lb_translate']; ?> : <?php echo $text[$lang]['lb_number_1']?>.</th>
+			    <th id="show_text_2"><?php echo $text[$lang]['lb_translate']; ?> : <?php echo $text[$lang]['lb_number_2']?>.</th>
+                <th id="show_text_3"><?php echo $text[$lang]['lb_translate']; ?> : <?php echo $text[$lang]['lb_number_3']?>.</th>
+				<th id="show_text_4"><?php echo $text[$lang]['lb_translate']; ?> : <?php echo $text[$lang]['lb_number_4']?>.</th>
+				</tr>
+                </table>				
+		  	<table  class="alt">
+												<thead>
+													<tr>
+													  <th></th>
+				                                      <th></th>
+                                                      <th></th>
+				                                      <th></th>
+													</tr>
+												</thead>
+												<tbody>
+                <tr>
+				 <td><button id="show_1" title="<?php echo $text[$lang]['lb_number_1']; ?>" alt="<?php echo $text[$lang]['lb_number_1']; ?>"class="button small"><?php echo $text[$lang_]['lb_number_1']; ?></button></td>
+				 <td><button id="show_2" title="<?php echo $text[$lang]['lb_number_2']; ?>" alt="<?php echo $text[$lang]['lb_number_2']; ?>"class="button small"><?php echo $text[$lang_]['lb_number_2']; ?></button></td>
+				 <td><button id="show_3" title="<?php echo $text[$lang]['lb_number_3']; ?>" alt="<?php echo $text[$lang]['lb_number_3']; ?>"class="button small"><?php echo $text[$lang_]['lb_number_3']; ?></button></td>
+				 <td><button id="show_4" title="<?php echo $text[$lang]['lb_number_4']; ?>" alt="<?php echo $text[$lang]['lb_number_4']; ?>"class="button small"><?php echo $text[$lang_]['lb_number_4']; ?></button></td>
+                </tr>
+				  <tr>
+				 <td><button class="button small"><?php echo $text[$lang]['bt_listen']; ?></button></td>
+				 <td><button class="button small"><?php echo $text[$lang]['bt_listen']; ?></button></td>
+				 <td><button class="button small"><?php echo $text[$lang]['bt_listen']; ?></button></td>
+				 <td><button class="button small"><?php echo $text[$lang]['bt_listen']; ?></button></td>
+                </tr>
+				 <tr>
+				 <td><input type="text" value="" placeholder="" id="word_trans_1" class="color2" name="word_trans_1"><span id="word_trans_1_err" class="error"></span></td>
+				 <td><input type="text" value="" placeholder="" id="word_trans_2" class="color2" name="word_trans_2"><span id="word_trans_2_err" class="error"></span></td>
+				 <td><input type="text" value="" placeholder="" id="word_trans_3" class="color2" name="word_trans_3"><span id="word_trans_3_err" class="error"></span></td>
+				 <td><input type="text" value="" placeholder="" id="word_trans_4" class="color2" name="word_trans_4"><span id="word_trans_4_err" class="error"></span></td>
+				 </tr>
+
+	
+												</tbody>
+												<tfoot>
+
+
+													<!--<tr>
+														<td colspan="2"></td>
+														<td>100.00</td>-->
+													</tr>
+												</tfoot>
+											</table>
 			
 			
 			
