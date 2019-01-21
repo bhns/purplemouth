@@ -26,10 +26,10 @@ try {
         <h3 class="panel-title"><?php echo ($_GET["m"] == "update") ? "Edit" : "Add"; ?> <?php echo $text[$lang]['lb_new_word']?></h3>
 		
 		  <form class="form-horizontal" name="contact_form" id="contact_form" enctype="multipart/form-data" method="post" action="_main_.php">
-          <input type="hidden" name="mode" value="<?php echo ($_GET["m"] == "update") ? "update_old" : "add_new"; ?>" >
-          <input type="hidden" name="old_pic" value="<?php echo $results[0]["word_pic"] ?>" >
-          <input type="hidden" name="cid" value="<?php echo intval($results[0]["word_id"]); ?>" >
-          <input type="hidden" name="pagenum" value="<?php echo $_GET["pagenum"]; ?>" >
+          <input type="text" name="mode" value="<?php echo ($_GET["m"] == "update") ? "update_old" : "add_new"; ?>" >
+          <input type="text" name="old_pic" value="<?php echo $results[0]["word_pic"] ?>" >
+          <input type="text" name="cid" value="<?php echo intval($results[0]["word_id"]); ?>" >
+          <input type="text" name="pagenum" value="<?php echo $_GET["pagenum"]; ?>" >
           <fieldset>
             <div class="field half">
               <label for="word_name"><span class="required">*</span> <?php echo $text[$lang]['lb_word']?>:</label>
